@@ -1,0 +1,448 @@
+<!DOCTYPE html><html><head><title></title><meta charset="utf-8"><style>* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	line-height: 1.6;
+	font-size: 0.6875em; /* 11 pt */
+	color: #111;
+	margin: 0;
+}
+
+body > :first-child {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+body > :last-child {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0.5em 0 0.25em;
+}
+
+h5,
+h6 {
+	padding: 0;
+}
+
+h5 {
+	font-size: 1em;
+}
+
+h6 {
+	font-size: 0.875em;
+	text-transform: uppercase;
+}
+
+p {
+	margin: 0.25em 0 1em;
+}
+
+blockquote {
+	margin: 0.5em 0 1em;
+	padding-left: 0.5em;
+	padding-right: 1em;
+	border-left: 4px solid gainsboro;
+	font-style: italic;
+}
+
+ul,
+ol {
+	margin: 0;
+	margin-left: 1em;
+	padding: 0 1.5em 0.5em;
+}
+
+pre {
+	white-space: pre-wrap;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code,
+p code,
+li code,
+pre code {
+	background-color: #f8f8f8;
+	padding: 0.1em 0.375em;
+	border: 1px solid #f8f8f8;
+	border-radius: 0.25em;
+	font-family: monospace;
+	font-size: 1.2em;
+}
+
+pre code {
+	display: block;
+	padding: 0.5em;
+}
+
+.page-break {
+	page-break-after: always;
+}
+
+img {
+	max-width: 100%;
+	margin: 1em 0;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	display: block;
+	margin: 0 0 1em;
+	width: 100%;
+	overflow: auto;
+}
+
+table th,
+table td {
+	padding: 0.5em 1em;
+	border: 1px solid gainsboro;
+}
+
+table th {
+	font-weight: 600;
+}
+
+table tr {
+	background-color: white;
+	border-top: 1px solid gainsboro;
+}
+
+table tr:nth-child(2n) {
+	background-color: whitesmoke;
+}
+/*# sourceURL=/opt/hostedtoolcache/node/18.19.1/x64/lib/node_modules/md-to-pdf/markdown.css*/</style><style>pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em
+}
+code.hljs {
+  padding: 3px 5px
+}
+/*!
+  Theme: GitHub
+  Description: Light theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-light
+  Current colors taken from GitHub's CSS
+*/
+.hljs {
+  color: #24292e;
+  background: #ffffff
+}
+.hljs-doctag,
+.hljs-keyword,
+.hljs-meta .hljs-keyword,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-variable.language_ {
+  /* prettylights-syntax-keyword */
+  color: #d73a49
+}
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.class_.inherited__,
+.hljs-title.function_ {
+  /* prettylights-syntax-entity */
+  color: #6f42c1
+}
+.hljs-attr,
+.hljs-attribute,
+.hljs-literal,
+.hljs-meta,
+.hljs-number,
+.hljs-operator,
+.hljs-variable,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-id {
+  /* prettylights-syntax-constant */
+  color: #005cc5
+}
+.hljs-regexp,
+.hljs-string,
+.hljs-meta .hljs-string {
+  /* prettylights-syntax-string */
+  color: #032f62
+}
+.hljs-built_in,
+.hljs-symbol {
+  /* prettylights-syntax-variable */
+  color: #e36209
+}
+.hljs-comment,
+.hljs-code,
+.hljs-formula {
+  /* prettylights-syntax-comment */
+  color: #6a737d
+}
+.hljs-name,
+.hljs-quote,
+.hljs-selector-tag,
+.hljs-selector-pseudo {
+  /* prettylights-syntax-entity-tag */
+  color: #22863a
+}
+.hljs-subst {
+  /* prettylights-syntax-storage-modifier-import */
+  color: #24292e
+}
+.hljs-section {
+  /* prettylights-syntax-markup-heading */
+  color: #005cc5;
+  font-weight: bold
+}
+.hljs-bullet {
+  /* prettylights-syntax-markup-list */
+  color: #735c0f
+}
+.hljs-emphasis {
+  /* prettylights-syntax-markup-italic */
+  color: #24292e;
+  font-style: italic
+}
+.hljs-strong {
+  /* prettylights-syntax-markup-bold */
+  color: #24292e;
+  font-weight: bold
+}
+.hljs-addition {
+  /* prettylights-syntax-markup-inserted */
+  color: #22863a;
+  background-color: #f0fff4
+}
+.hljs-deletion {
+  /* prettylights-syntax-markup-deleted */
+  color: #b31d28;
+  background-color: #ffeef0
+}
+.hljs-char.escape_,
+.hljs-link,
+.hljs-params,
+.hljs-property,
+.hljs-punctuation,
+.hljs-tag {
+  /* purposely ignored */
+  
+}/*# sourceURL=/opt/hostedtoolcache/node/18.19.1/x64/lib/node_modules/md-to-pdf/node_modules/highlight.js/styles/github.css*/</style></head>
+	<body class="">
+		<h1 id="structures">Structures</h1>
+<blockquote>
+<p>Dans cette série d'exercices, vous allez créer un magasin de jeux vidéo en ligne de commande.</p>
+</blockquote>
+<h2 id="exercice-1">Exercice 1</h2>
+<ol>
+<li><p>Déclarez les structures suivantes :</p>
+<ul>
+<li><strong>item</strong> : <strong>id</strong> (<code>int</code>), <strong>name</strong> (<code>string</code>), <strong>price</strong> (<code>int</code>)</li>
+<li><strong>game</strong> : intégrez la structure <strong><code>item</code></strong>, <strong>genre</strong> (<code>string</code>)</li>
+</ul>
+</li>
+<li><p>Créez une tranche (<code>slice</code>) de jeux vidéo (<code>game</code>) en utilisant les données suivantes :</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>price</th>
+<th>genre</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>god of war</td>
+<td>50</td>
+<td>action adventure</td>
+</tr>
+<tr>
+<td>2</td>
+<td>x-com 2</td>
+<td>30</td>
+<td>strategy</td>
+</tr>
+<tr>
+<td>3</td>
+<td>minecraft</td>
+<td>20</td>
+<td>sandbox</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>Affichez tous les jeux vidéo.</p>
+</li>
+</ol>
+<pre><code class="hljs go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+    <span class="hljs-comment">// Votre code ici</span>
+}
+</code></pre>
+<p><strong>Résultat attendu :</strong></p>
+<pre><code>Le magasin propose 3 jeux.
+
+#1   : "god of war"    (action adventure)   50€
+#2   : "x-com 2"       (strategy)           40€
+#3   : "minecraft"     (sandbox)            20€
+</code></pre>
+<p><strong>Indice :</strong><br>
+Regarder les codes de formatage d'espacement pour les chaînes de
+caractères (<a href="https://cheatography.com/fenistil/cheat-sheets/go-fmt-formattings/">https://cheatography.com/fenistil/cheat-sheets/go-fmt-formattings/</a>).</p>
+<h2 id="exercice-2">Exercice 2</h2>
+<ol>
+<li>Utilisez l'interface <strong><code>bufio.Scanner</code></strong> pour ajouter une fonctionnalité d'interaction avec l'utilisateur dans votre
+programme.<ul>
+<li>Les utilisateurs devraient pouvoir lister les jeux ou rechercher des jeux par ID.</li>
+</ul>
+</li>
+<li>Affichez les commandes disponibles.</li>
+<li>Implémentez la commande <strong>quit</strong> : Permet de quitter la boucle.</li>
+<li>Implémentez la commande <strong>list</strong> : Permet d'afficher la liste de tous les jeux.</li>
+</ol>
+<pre><code class="hljs go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+    <span class="hljs-comment">// Utilisez votre solution de l'exercice précédent</span>
+    <span class="hljs-comment">// pour créer une interaction avec l'utilisateur ici.</span>
+}
+</code></pre>
+<p><strong>Indice :</strong><br>
+Regarder la documentation de l'interface **<code>bufio.Scanner</code>
+** (<a href="https://golang.org/pkg/bufio/#Scanner">https://golang.org/pkg/bufio/#Scanner</a>).</p>
+<pre><code class="hljs go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">"bufio"</span>
+    <span class="hljs-string">"fmt"</span>
+    <span class="hljs-string">"os"</span>
+)
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+    <span class="hljs-comment">// bufio.Scanner example</span>
+    in := bufio.NewScanner(os.Stdin)
+    fmt.Println(<span class="hljs-string">"Please enter your name: "</span>)
+    in.Scan()
+    fmt.Printf(<span class="hljs-string">"Hello %q\n"</span>, in.Text())
+}
+</code></pre>
+<p><strong>Résultat attendu :</strong></p>
+<pre><code>$ go run main.go
+Le magasin propose 3 jeux.
+
+Commandes :
+&gt; list   : liste tous les jeux
+&gt; quit   : quitte
+
+Votre choix : list
+
+#1   : "god of war"    (action adventure)   50€
+#2   : "x-com 2"       (strategy)           40€
+#3   : "minecraft"     (sandbox)            20€
+
+Commandes :
+&gt; list   : liste tous les jeux
+&gt; quit   : quitte
+
+Votre choix : dd
+
+Commande inconnue.
+
+...
+
+Votre choix : quit
+
+Au revoir !
+</code></pre>
+<h2 id="exercice-3">Exercice 3</h2>
+<ol>
+<li>Implémentez la commande <strong>id</strong> : Permet de rechercher un jeu par ID.<ul>
+<li>Lorsqu'un utilisateur tape : <code>id 2</code>, il devrait afficher uniquement le jeu avec l'identifiant 2.</li>
+</ul>
+</li>
+<li>Avant la boucle, créez un dictionnaire (<code>map</code>) qui associe les ID des jeux au jeu correspondant.</li>
+<li>Gérez les erreurs :<pre><code>id
+ID invalide.
+
+id HEY
+ID invalide.
+
+id 10
+Jeu introuvable.
+
+id 1
+#1   : "god of war"    (action adventure)   50€
+
+id 2
+#2   : "x-com 2"       (strategy)           40€
+</code></pre>
+</li>
+</ol>
+<p><strong>Indice :</strong><br>
+Regardez ce que font les fonctions :</p>
+<ul>
+<li><strong><code>strings.Fields</code></strong> (<a href="https://golang.org/pkg/strings/#Fields">https://golang.org/pkg/strings/#Fields</a>)</li>
+<li><strong><code>strconv.Atoi</code></strong> (<a href="https://golang.org/pkg/strconv/#Atoi">https://golang.org/pkg/strconv/#Atoi</a>)</li>
+</ul>
+<p><strong>Résultat attendu :</strong></p>
+<pre><code>$ go run main.go
+Le magasin propose 3 jeux.
+
+Commandes :
+&gt; list   : liste tous les jeux
+&gt; id N   : affiche le jeu d'identifiant N
+&gt; quit   : quitte
+
+Votre choix : id
+
+ID invalide.
+
+...
+
+Votre choix : id S
+
+ID invalide.
+
+...
+
+Votre choix : id 1
+
+#1   : "god of war"    (action adventure)   50€
+
+...
+
+Votre choix : id 10
+
+Jeu introuvable.
+
+...
+
+Votre choix : quit
+
+Au revoir !
+</code></pre>
+
+	
+
+</body></html>
