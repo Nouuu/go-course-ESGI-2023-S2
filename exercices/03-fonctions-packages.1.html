@@ -1,0 +1,447 @@
+<!DOCTYPE html><html><head><title></title><meta charset="utf-8"><style>* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	line-height: 1.6;
+	font-size: 0.6875em; /* 11 pt */
+	color: #111;
+	margin: 0;
+}
+
+body > :first-child {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+body > :last-child {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0.5em 0 0.25em;
+}
+
+h5,
+h6 {
+	padding: 0;
+}
+
+h5 {
+	font-size: 1em;
+}
+
+h6 {
+	font-size: 0.875em;
+	text-transform: uppercase;
+}
+
+p {
+	margin: 0.25em 0 1em;
+}
+
+blockquote {
+	margin: 0.5em 0 1em;
+	padding-left: 0.5em;
+	padding-right: 1em;
+	border-left: 4px solid gainsboro;
+	font-style: italic;
+}
+
+ul,
+ol {
+	margin: 0;
+	margin-left: 1em;
+	padding: 0 1.5em 0.5em;
+}
+
+pre {
+	white-space: pre-wrap;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code,
+p code,
+li code,
+pre code {
+	background-color: #f8f8f8;
+	padding: 0.1em 0.375em;
+	border: 1px solid #f8f8f8;
+	border-radius: 0.25em;
+	font-family: monospace;
+	font-size: 1.2em;
+}
+
+pre code {
+	display: block;
+	padding: 0.5em;
+}
+
+.page-break {
+	page-break-after: always;
+}
+
+img {
+	max-width: 100%;
+	margin: 1em 0;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	display: block;
+	margin: 0 0 1em;
+	width: 100%;
+	overflow: auto;
+}
+
+table th,
+table td {
+	padding: 0.5em 1em;
+	border: 1px solid gainsboro;
+}
+
+table th {
+	font-weight: 600;
+}
+
+table tr {
+	background-color: white;
+	border-top: 1px solid gainsboro;
+}
+
+table tr:nth-child(2n) {
+	background-color: whitesmoke;
+}
+/*# sourceURL=/opt/hostedtoolcache/node/18.19.1/x64/lib/node_modules/md-to-pdf/markdown.css*/</style><style>pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em
+}
+code.hljs {
+  padding: 3px 5px
+}
+/*!
+  Theme: GitHub
+  Description: Light theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-light
+  Current colors taken from GitHub's CSS
+*/
+.hljs {
+  color: #24292e;
+  background: #ffffff
+}
+.hljs-doctag,
+.hljs-keyword,
+.hljs-meta .hljs-keyword,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-variable.language_ {
+  /* prettylights-syntax-keyword */
+  color: #d73a49
+}
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.class_.inherited__,
+.hljs-title.function_ {
+  /* prettylights-syntax-entity */
+  color: #6f42c1
+}
+.hljs-attr,
+.hljs-attribute,
+.hljs-literal,
+.hljs-meta,
+.hljs-number,
+.hljs-operator,
+.hljs-variable,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-id {
+  /* prettylights-syntax-constant */
+  color: #005cc5
+}
+.hljs-regexp,
+.hljs-string,
+.hljs-meta .hljs-string {
+  /* prettylights-syntax-string */
+  color: #032f62
+}
+.hljs-built_in,
+.hljs-symbol {
+  /* prettylights-syntax-variable */
+  color: #e36209
+}
+.hljs-comment,
+.hljs-code,
+.hljs-formula {
+  /* prettylights-syntax-comment */
+  color: #6a737d
+}
+.hljs-name,
+.hljs-quote,
+.hljs-selector-tag,
+.hljs-selector-pseudo {
+  /* prettylights-syntax-entity-tag */
+  color: #22863a
+}
+.hljs-subst {
+  /* prettylights-syntax-storage-modifier-import */
+  color: #24292e
+}
+.hljs-section {
+  /* prettylights-syntax-markup-heading */
+  color: #005cc5;
+  font-weight: bold
+}
+.hljs-bullet {
+  /* prettylights-syntax-markup-list */
+  color: #735c0f
+}
+.hljs-emphasis {
+  /* prettylights-syntax-markup-italic */
+  color: #24292e;
+  font-style: italic
+}
+.hljs-strong {
+  /* prettylights-syntax-markup-bold */
+  color: #24292e;
+  font-weight: bold
+}
+.hljs-addition {
+  /* prettylights-syntax-markup-inserted */
+  color: #22863a;
+  background-color: #f0fff4
+}
+.hljs-deletion {
+  /* prettylights-syntax-markup-deleted */
+  color: #b31d28;
+  background-color: #ffeef0
+}
+.hljs-char.escape_,
+.hljs-link,
+.hljs-params,
+.hljs-property,
+.hljs-punctuation,
+.hljs-tag {
+  /* purposely ignored */
+  
+}/*# sourceURL=/opt/hostedtoolcache/node/18.19.1/x64/lib/node_modules/md-to-pdf/node_modules/highlight.js/styles/github.css*/</style></head>
+	<body class="">
+		<h1 id="fonctions">Fonctions</h1>
+<h2 id="exercice-1">Exercice 1</h2>
+<ul>
+<li>Créez une fonction nommée <code>add</code> qui prend deux arguments de type <code>int</code> et retourne leur somme. Appelez la
+fonction <code>add</code> avec les arguments <code>5</code> et <code>3</code>, puis imprimez le résultat.</li>
+<li>Créez une fonction nommée <code>multiply</code> qui prend deux arguments de type <code>int</code> et retourne leur produit. Appelez la
+fonction <code>multiply</code> avec les arguments <code>4</code> et <code>7</code>, puis imprimez le résultat.</li>
+<li>Créez une fonction nommée <code>greet</code> qui prend un argument de type <code>string</code> (un nom) et retourne une chaîne de caractères
+de
+salutation. Appelez la fonction <code>greet</code> avec le nom <code>"Alice"</code>, puis imprimez la salutation.</li>
+<li>Créez une fonction nommée <code>isEven</code> qui prend un argument de type <code>int</code> et retourne <code>true</code> si le nombre est pair
+et <code>false</code>
+sinon. Appelez la fonction <code>isEven</code> avec les nombres <code>6</code> et <code>9</code>, puis imprimez les résultats.</li>
+<li>Créez une fonction nommée <code>average</code> qui prend un tableau dynamique (slice) de type <code>float64</code> et retourne leur moyenne.
+Appelez la fonction <code>average</code> avec les nombres <code>2.5</code>, <code>3.7</code> et <code>4.8</code>, puis imprimez la moyenne avec une précision de<ol start="2">
+<li></li>
+</ol>
+</li>
+</ul>
+<pre><code class="hljs go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+    <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> add</span>
+    <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> multiply</span>
+    <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> greet</span>
+    <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> isEven</span>
+    <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> average</span>
+}
+</code></pre>
+<p><strong>Résultat attendu</strong>:</p>
+<pre><code>8
+28
+Hello Alice!
+6 is even: true
+9 is even: false
+Average: 3.67
+</code></pre>
+<h2 id="exercice-2">Exercice 2</h2>
+<p>Créez un programme qui génère des mots de passe aléatoires avec des options personnalisables.</p>
+<ul>
+<li>L'utilisateur doit entrer la longueur souhaitée pour le mot de passe.</li>
+<li>L'utilisateur doit également avoir la possibilité de choisir si le mot de passe doit contenir des lettres majuscules,
+des lettres minuscules, des chiffres et des caractères spéciaux.</li>
+<li>Créez une fonction <code>generatePassword</code> qui prend en entrée la longueur du mot de passe et les options (<strong>majuscules</strong>,
+<strong>minuscules</strong>, <strong>chiffres</strong>, <strong>caractères spéciaux</strong>) et retourne un mot de passe aléatoire.</li>
+<li>Utilisez une fonction séparée <code>getRandomChar</code> pour générer un caractère aléatoire en fonction des options spécifiées.</li>
+<li>Utilisez cette fonction pour générer un mot de passe et affichez-le à l'écran.</li>
+</ul>
+<p><strong>Contraintes</strong></p>
+<ul>
+<li>Utilisez au moins deux fonctions : <code>generatePassword</code> et <code>getRandomChar</code>.</li>
+<li>Vous devez gérer les erreurs d'entrée de l'utilisateur.</li>
+<li>La fonction generatePassword doit appeler la fonction getRandomChar pour générer chaque caractère du mot de passe.</li>
+<li>Le mot de passe doit être généré en fonction des options spécifiées par l'utilisateur (majuscules, minuscules,
+chiffres, caractères spéciaux).</li>
+<li>Le code doit être modulaire et facile à comprendre.</li>
+</ul>
+<pre><code class="hljs go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">generatePassword</span><span class="hljs-params">(length <span class="hljs-type">int</span>, uppercase <span class="hljs-type">bool</span>, lowercase <span class="hljs-type">bool</span>, numbers <span class="hljs-type">bool</span>, specials <span class="hljs-type">bool</span>)</span></span> <span class="hljs-type">string</span> {
+    <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> generatePassword</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">getRandomChar</span><span class="hljs-params">(uppercase <span class="hljs-type">bool</span>, lowercase <span class="hljs-type">bool</span>, numbers <span class="hljs-type">bool</span>, specials <span class="hljs-type">bool</span>)</span></span> <span class="hljs-type">string</span> {
+    <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> getRandomChar</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+    <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> prompt user for input</span>
+}
+</code></pre>
+<p><strong>Résultat attendu</strong>:</p>
+<pre><code>$ go run main.go
+
+Générateur de Mot de Passe Améliorée
+====================================
+
+Entrez la longueur du mot de passe : 12
+
+Inclure des majuscules ? (Oui/Non) : Oui
+Inclure des minuscules ? (Oui/Non) : Oui
+Inclure des chiffres ? (Oui/Non) : Oui
+Inclure des caractères spéciaux ? (Oui/Non) : Non
+
+Mot de passe généré : Kp7bN9A8L3j6z
+</code></pre>
+<h2 id="exercice-3">Exercice 3</h2>
+<p>Créez un convertisseur de température qui convertit entre les échelles Celsius, Fahrenheit et Kelvin.</p>
+<ul>
+<li>Créez une fonction <code>convertTemperature</code> qui prend une température, une échelle de départ et une échelle de destination
+en entrée, et renvoie la température convertie.</li>
+<li>Créez des fonctions pour convertir les températures entre les échelles Celsius, Fahrenheit et Kelvin.</li>
+<li>Les échelles de température prises en charge sont Celsius, Fahrenheit et Kelvin.</li>
+<li>Utilisez les formules de conversion appropriées.<ul>
+<li>Celsius vers Fahrenheit : <code>T(°F) = T(°C) × 9/5 + 32</code></li>
+<li>Celsius vers Kelvin : <code>T(K) = T(°C) + 273.15</code></li>
+<li>Fahrenheit vers Celsius : <code>T(°C) = (T(°F) - 32) × 5/9</code></li>
+<li>Fahrenheit vers Kelvin : <code>T(K) = (T(°F) + 459.67)× 5/9</code></li>
+<li>Kelvin vers Celsius : <code>T(°C) = T(K) - 273.15</code></li>
+<li>Kelvin vers Fahrenheit : <code>T(°F) = T(K) × 9/5 - 459.67</code></li>
+</ul>
+</li>
+</ul>
+<pre><code class="hljs go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">convertTemperature</span><span class="hljs-params">(temperature <span class="hljs-type">float64</span>, from <span class="hljs-type">string</span>, to <span class="hljs-type">string</span>)</span></span> <span class="hljs-type">float64</span> {
+    <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> convertTemperature</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+    <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> prompt user for input</span>
+}
+</code></pre>
+<p><strong>Résultat attendu</strong>:</p>
+<pre><code>go run main.go
+
+Convertisseur de Température
+---------------------------
+1. Celsius vers Fahrenheit
+2. Celsius vers Kelvin
+3. Fahrenheit vers Celsius
+4. Fahrenheit vers Kelvin
+5. Kelvin vers Celsius
+6. Kelvin vers Fahrenheit
+
+Sélectionnez une option : 2
+Entrez la température en degrés Celsius : 25
+Température en Kelvin : 298.15
+</code></pre>
+<h2 id="exercice-4">Exercice 4</h2>
+<p>Créez un programme qui génère des badges personnalisés pour un événement.</p>
+<ul>
+<li>Vous êtes chargé de créer des badges pour un événement et de les imprimer pour les participants.</li>
+<li>Créez une fonction <code>createBadge</code> qui prend en entrée le nom et le titre d'un participant, puis génère un badge au
+format spécifié.</li>
+<li>Le badge doit être formaté comme suit :<pre><code>*****************
+Nom: [Nom du Participant]
+Titre: [Titre du Participant]
+*****************
+</code></pre>
+</li>
+<li>L'utilisateur doit pouvoir entrer le nombre de participants et leurs informations.</li>
+<li>Utilisez la fonction createBadge pour générer les badges et affichez-les à l'écran.</li>
+<li>Chaque badge doit être <code>imprimé</code> avec des astérisques autour pour un effet visuel élégant.</li>
+<li>Utilisez la fonction <code>strings.Repeat</code> pour générer les astérisques.</li>
+<li>Vous pouvez aussi créer une fonction <code>prompt</code> pour demander à l'utilisateur d'entrer des informations et gérer le
+menu.</li>
+</ul>
+<pre><code class="hljs go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">createBadge</span><span class="hljs-params">(name <span class="hljs-type">string</span>, title <span class="hljs-type">string</span>)</span></span> <span class="hljs-type">string</span> {
+    <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> createBadge</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+    <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> prompt user for input</span>
+}
+</code></pre>
+<p><strong>Résultat attendu</strong>:</p>
+<pre><code>go run main.go
+
+Générateur de Badges pour un Événement
+--------------------------------------
+
+Combien de participants sont présents à l'événement ? : 3
+
+Participant 1 :
+Entrez le nom : Alice Johnson
+Entrez le titre : Développeur Web
+
+Participant 2 :
+Entrez le nom : Bob Smith
+Entrez le titre : Designer Graphique
+
+Participant 3 :
+Entrez le nom : Charlie Davis
+Entrez le titre : Gestionnaire de Projet
+
+Badges générés pour l'événement :
+*****************
+Nom: Alice Johnson
+Titre: Développeur Web
+*****************
+*****************
+Nom: Bob Smith
+Titre: Designer Graphique
+*****************
+*****************
+Nom: Charlie Davis
+Titre: Gestionnaire de Projet
+*****************
+</code></pre>
+
+	
+
+</body></html>
