@@ -1,0 +1,386 @@
+<!DOCTYPE html><html><head><title></title><meta charset="utf-8"><style>* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	line-height: 1.6;
+	font-size: 0.6875em; /* 11 pt */
+	color: #111;
+	margin: 0;
+}
+
+body > :first-child {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+body > :last-child {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0.5em 0 0.25em;
+}
+
+h5,
+h6 {
+	padding: 0;
+}
+
+h5 {
+	font-size: 1em;
+}
+
+h6 {
+	font-size: 0.875em;
+	text-transform: uppercase;
+}
+
+p {
+	margin: 0.25em 0 1em;
+}
+
+blockquote {
+	margin: 0.5em 0 1em;
+	padding-left: 0.5em;
+	padding-right: 1em;
+	border-left: 4px solid gainsboro;
+	font-style: italic;
+}
+
+ul,
+ol {
+	margin: 0;
+	margin-left: 1em;
+	padding: 0 1.5em 0.5em;
+}
+
+pre {
+	white-space: pre-wrap;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code,
+p code,
+li code,
+pre code {
+	background-color: #f8f8f8;
+	padding: 0.1em 0.375em;
+	border: 1px solid #f8f8f8;
+	border-radius: 0.25em;
+	font-family: monospace;
+	font-size: 1.2em;
+}
+
+pre code {
+	display: block;
+	padding: 0.5em;
+}
+
+.page-break {
+	page-break-after: always;
+}
+
+img {
+	max-width: 100%;
+	margin: 1em 0;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	display: block;
+	margin: 0 0 1em;
+	width: 100%;
+	overflow: auto;
+}
+
+table th,
+table td {
+	padding: 0.5em 1em;
+	border: 1px solid gainsboro;
+}
+
+table th {
+	font-weight: 600;
+}
+
+table tr {
+	background-color: white;
+	border-top: 1px solid gainsboro;
+}
+
+table tr:nth-child(2n) {
+	background-color: whitesmoke;
+}
+/*# sourceURL=/opt/hostedtoolcache/node/18.19.1/x64/lib/node_modules/md-to-pdf/markdown.css*/</style><style>pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em
+}
+code.hljs {
+  padding: 3px 5px
+}
+/*!
+  Theme: GitHub
+  Description: Light theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-light
+  Current colors taken from GitHub's CSS
+*/
+.hljs {
+  color: #24292e;
+  background: #ffffff
+}
+.hljs-doctag,
+.hljs-keyword,
+.hljs-meta .hljs-keyword,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-variable.language_ {
+  /* prettylights-syntax-keyword */
+  color: #d73a49
+}
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.class_.inherited__,
+.hljs-title.function_ {
+  /* prettylights-syntax-entity */
+  color: #6f42c1
+}
+.hljs-attr,
+.hljs-attribute,
+.hljs-literal,
+.hljs-meta,
+.hljs-number,
+.hljs-operator,
+.hljs-variable,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-id {
+  /* prettylights-syntax-constant */
+  color: #005cc5
+}
+.hljs-regexp,
+.hljs-string,
+.hljs-meta .hljs-string {
+  /* prettylights-syntax-string */
+  color: #032f62
+}
+.hljs-built_in,
+.hljs-symbol {
+  /* prettylights-syntax-variable */
+  color: #e36209
+}
+.hljs-comment,
+.hljs-code,
+.hljs-formula {
+  /* prettylights-syntax-comment */
+  color: #6a737d
+}
+.hljs-name,
+.hljs-quote,
+.hljs-selector-tag,
+.hljs-selector-pseudo {
+  /* prettylights-syntax-entity-tag */
+  color: #22863a
+}
+.hljs-subst {
+  /* prettylights-syntax-storage-modifier-import */
+  color: #24292e
+}
+.hljs-section {
+  /* prettylights-syntax-markup-heading */
+  color: #005cc5;
+  font-weight: bold
+}
+.hljs-bullet {
+  /* prettylights-syntax-markup-list */
+  color: #735c0f
+}
+.hljs-emphasis {
+  /* prettylights-syntax-markup-italic */
+  color: #24292e;
+  font-style: italic
+}
+.hljs-strong {
+  /* prettylights-syntax-markup-bold */
+  color: #24292e;
+  font-weight: bold
+}
+.hljs-addition {
+  /* prettylights-syntax-markup-inserted */
+  color: #22863a;
+  background-color: #f0fff4
+}
+.hljs-deletion {
+  /* prettylights-syntax-markup-deleted */
+  color: #b31d28;
+  background-color: #ffeef0
+}
+.hljs-char.escape_,
+.hljs-link,
+.hljs-params,
+.hljs-property,
+.hljs-punctuation,
+.hljs-tag {
+  /* purposely ignored */
+  
+}/*# sourceURL=/opt/hostedtoolcache/node/18.19.1/x64/lib/node_modules/md-to-pdf/node_modules/highlight.js/styles/github.css*/</style></head>
+	<body class="">
+		<h1 id="tableaux-et-tranches">Tableaux et Tranches</h1>
+<h2 id="exercice-1">Exercice 1</h2>
+<pre><code class="hljs go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">"fmt"</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+    names := []<span class="hljs-type">string</span>{<span class="hljs-string">"Einstein"</span>, <span class="hljs-string">"Tesla"</span>, <span class="hljs-string">"Shepard"</span>}
+    distances := []<span class="hljs-type">int</span>{<span class="hljs-number">50</span>, <span class="hljs-number">40</span>, <span class="hljs-number">75</span>, <span class="hljs-number">30</span>, <span class="hljs-number">125</span>}
+    data := []<span class="hljs-type">byte</span>{<span class="hljs-string">'H'</span>, <span class="hljs-string">'E'</span>, <span class="hljs-string">'L'</span>, <span class="hljs-string">'L'</span>, <span class="hljs-string">'O'</span>}
+    ratios := []<span class="hljs-type">float64</span>{<span class="hljs-number">3.14145</span>}
+    alives := []<span class="hljs-type">bool</span>{<span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>}
+    zero := []<span class="hljs-type">byte</span>{}
+
+    fmt.Printf(<span class="hljs-string">"names    : %[1]T %[1]v\n"</span>, names)
+    fmt.Printf(<span class="hljs-string">"distances: %[1]T %[1]d\n"</span>, distances)
+    fmt.Printf(<span class="hljs-string">"data     : %[1]T %[1]d\n"</span>, data)
+    fmt.Printf(<span class="hljs-string">"ratios   : %[1]T %.2[1]f\n"</span>, ratios)
+    fmt.Printf(<span class="hljs-string">"alives   : %[1]T %[1]t\n"</span>, alives)
+    fmt.Printf(<span class="hljs-string">"zero     : %[1]T %[1]d\n"</span>, zero)
+}
+</code></pre>
+<h2 id="exercice-2">Exercice 2</h2>
+<pre><code class="hljs go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">"fmt"</span>
+    <span class="hljs-string">"sort"</span>
+    <span class="hljs-string">"strings"</span>
+)
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+    namesA := <span class="hljs-string">"Da Vinci, Wozniak, Carmack"</span>
+    namesB := []<span class="hljs-type">string</span>{<span class="hljs-string">"Wozniak"</span>, <span class="hljs-string">"Da Vinci"</span>, <span class="hljs-string">"Carmack"</span>}
+
+    namesC := strings.Split(namesA, <span class="hljs-string">", "</span>)
+
+    sort.Strings(namesC)
+    sort.Strings(namesB)
+
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(namesC) == <span class="hljs-built_in">len</span>(namesB) {
+        <span class="hljs-keyword">for</span> i := <span class="hljs-keyword">range</span> namesC {
+            <span class="hljs-keyword">if</span> namesC[i] != namesB[i] {
+                <span class="hljs-keyword">return</span>
+            }
+        }
+        fmt.Println(<span class="hljs-string">"Ils sont égaux."</span>)
+    }
+}
+</code></pre>
+<h2 id="exercice-3">Exercice 3</h2>
+<pre><code class="hljs go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">"fmt"</span>
+    <span class="hljs-string">"time"</span>
+)
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+    <span class="hljs-comment">// ------------------------------------------------------------</span>
+    <span class="hljs-comment">// Crée des slices vides</span>
+    <span class="hljs-comment">// ------------------------------------------------------------</span>
+
+    <span class="hljs-comment">// Pizza toppings</span>
+    <span class="hljs-keyword">var</span> pizza []<span class="hljs-type">string</span>
+
+    <span class="hljs-comment">// Departure times</span>
+    <span class="hljs-keyword">var</span> departures []time.Time
+
+    <span class="hljs-comment">// Student graduation years</span>
+    <span class="hljs-keyword">var</span> grads []<span class="hljs-type">int</span>
+
+    <span class="hljs-comment">// On/off states of lights in a room</span>
+    <span class="hljs-keyword">var</span> lights []<span class="hljs-type">bool</span>
+
+    <span class="hljs-comment">// ------------------------------------------------------------</span>
+    <span class="hljs-comment">// Ajoute des éléments aux slices</span>
+    <span class="hljs-comment">// ------------------------------------------------------------</span>
+    pizza = <span class="hljs-built_in">append</span>(pizza, <span class="hljs-string">"pepperoni"</span>, <span class="hljs-string">"onions"</span>, <span class="hljs-string">"extra cheese"</span>)
+
+    now := time.Now()
+    departures = <span class="hljs-built_in">append</span>(departures,
+        now,
+        now.Add(time.Hour*<span class="hljs-number">24</span>), <span class="hljs-comment">// 24 hours after `now`</span>
+        now.Add(time.Hour*<span class="hljs-number">48</span>)) <span class="hljs-comment">// 48 hours after `now`</span>
+
+    grads = <span class="hljs-built_in">append</span>(grads, <span class="hljs-number">1998</span>, <span class="hljs-number">2005</span>, <span class="hljs-number">2018</span>)
+
+    lights = <span class="hljs-built_in">append</span>(lights, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">true</span>)
+
+    <span class="hljs-comment">// ------------------------------------------------------------</span>
+    <span class="hljs-comment">// Affiche les slices</span>
+    <span class="hljs-comment">// ------------------------------------------------------------</span>
+
+    fmt.Printf(<span class="hljs-string">"pizza       : %s\n"</span>, pizza)
+    fmt.Printf(<span class="hljs-string">"\ngraduations : %d\n"</span>, grads)
+    fmt.Printf(<span class="hljs-string">"\ndepartures  : %s\n"</span>, departures)
+    fmt.Printf(<span class="hljs-string">"\nlights      : %t\n"</span>, lights)
+}
+</code></pre>
+<h2 id="exercice-4">Exercice 4</h2>
+<pre><code class="hljs go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">"fmt"</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+    <span class="hljs-keyword">var</span> (
+        nums   []<span class="hljs-type">int</span>
+        oldCap <span class="hljs-type">float64</span>
+    )
+
+    <span class="hljs-comment">// boucle 10 millions de fois</span>
+    <span class="hljs-keyword">for</span> <span class="hljs-built_in">len</span>(nums) &lt; <span class="hljs-number">1e7</span> {
+        <span class="hljs-comment">// obtient la capacité</span>
+        c := <span class="hljs-type">float64</span>(<span class="hljs-built_in">cap</span>(nums))
+
+        <span class="hljs-comment">// imprime seulement lorsque la capacité change</span>
+        <span class="hljs-keyword">if</span> c == <span class="hljs-number">0</span> || c != oldCap {
+            <span class="hljs-comment">// imprime également le ratio de croissance : c/oldCap</span>
+            fmt.Printf(<span class="hljs-string">"len:%-15d cap:%-15g growth:%-15.2f\n"</span>,
+                <span class="hljs-built_in">len</span>(nums), c, c/oldCap)
+        }
+
+        <span class="hljs-comment">// garde une trace de la capacité précédente</span>
+        oldCap = c
+
+        <span class="hljs-comment">// ajoute un élément arbitraire à la tranche</span>
+        nums = <span class="hljs-built_in">append</span>(nums, <span class="hljs-number">1</span>)
+    }
+}
+</code></pre>
+
+	
+
+</body></html>
