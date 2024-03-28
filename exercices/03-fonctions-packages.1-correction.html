@@ -1,0 +1,563 @@
+<!DOCTYPE html><html><head><title></title><meta charset="utf-8"><style>* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	line-height: 1.6;
+	font-size: 0.6875em; /* 11 pt */
+	color: #111;
+	margin: 0;
+}
+
+body > :first-child {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+body > :last-child {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0.5em 0 0.25em;
+}
+
+h5,
+h6 {
+	padding: 0;
+}
+
+h5 {
+	font-size: 1em;
+}
+
+h6 {
+	font-size: 0.875em;
+	text-transform: uppercase;
+}
+
+p {
+	margin: 0.25em 0 1em;
+}
+
+blockquote {
+	margin: 0.5em 0 1em;
+	padding-left: 0.5em;
+	padding-right: 1em;
+	border-left: 4px solid gainsboro;
+	font-style: italic;
+}
+
+ul,
+ol {
+	margin: 0;
+	margin-left: 1em;
+	padding: 0 1.5em 0.5em;
+}
+
+pre {
+	white-space: pre-wrap;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code,
+p code,
+li code,
+pre code {
+	background-color: #f8f8f8;
+	padding: 0.1em 0.375em;
+	border: 1px solid #f8f8f8;
+	border-radius: 0.25em;
+	font-family: monospace;
+	font-size: 1.2em;
+}
+
+pre code {
+	display: block;
+	padding: 0.5em;
+}
+
+.page-break {
+	page-break-after: always;
+}
+
+img {
+	max-width: 100%;
+	margin: 1em 0;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	display: block;
+	margin: 0 0 1em;
+	width: 100%;
+	overflow: auto;
+}
+
+table th,
+table td {
+	padding: 0.5em 1em;
+	border: 1px solid gainsboro;
+}
+
+table th {
+	font-weight: 600;
+}
+
+table tr {
+	background-color: white;
+	border-top: 1px solid gainsboro;
+}
+
+table tr:nth-child(2n) {
+	background-color: whitesmoke;
+}
+/*# sourceURL=/opt/hostedtoolcache/node/18.19.1/x64/lib/node_modules/md-to-pdf/markdown.css*/</style><style>pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em
+}
+code.hljs {
+  padding: 3px 5px
+}
+/*!
+  Theme: GitHub
+  Description: Light theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-light
+  Current colors taken from GitHub's CSS
+*/
+.hljs {
+  color: #24292e;
+  background: #ffffff
+}
+.hljs-doctag,
+.hljs-keyword,
+.hljs-meta .hljs-keyword,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-variable.language_ {
+  /* prettylights-syntax-keyword */
+  color: #d73a49
+}
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.class_.inherited__,
+.hljs-title.function_ {
+  /* prettylights-syntax-entity */
+  color: #6f42c1
+}
+.hljs-attr,
+.hljs-attribute,
+.hljs-literal,
+.hljs-meta,
+.hljs-number,
+.hljs-operator,
+.hljs-variable,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-id {
+  /* prettylights-syntax-constant */
+  color: #005cc5
+}
+.hljs-regexp,
+.hljs-string,
+.hljs-meta .hljs-string {
+  /* prettylights-syntax-string */
+  color: #032f62
+}
+.hljs-built_in,
+.hljs-symbol {
+  /* prettylights-syntax-variable */
+  color: #e36209
+}
+.hljs-comment,
+.hljs-code,
+.hljs-formula {
+  /* prettylights-syntax-comment */
+  color: #6a737d
+}
+.hljs-name,
+.hljs-quote,
+.hljs-selector-tag,
+.hljs-selector-pseudo {
+  /* prettylights-syntax-entity-tag */
+  color: #22863a
+}
+.hljs-subst {
+  /* prettylights-syntax-storage-modifier-import */
+  color: #24292e
+}
+.hljs-section {
+  /* prettylights-syntax-markup-heading */
+  color: #005cc5;
+  font-weight: bold
+}
+.hljs-bullet {
+  /* prettylights-syntax-markup-list */
+  color: #735c0f
+}
+.hljs-emphasis {
+  /* prettylights-syntax-markup-italic */
+  color: #24292e;
+  font-style: italic
+}
+.hljs-strong {
+  /* prettylights-syntax-markup-bold */
+  color: #24292e;
+  font-weight: bold
+}
+.hljs-addition {
+  /* prettylights-syntax-markup-inserted */
+  color: #22863a;
+  background-color: #f0fff4
+}
+.hljs-deletion {
+  /* prettylights-syntax-markup-deleted */
+  color: #b31d28;
+  background-color: #ffeef0
+}
+.hljs-char.escape_,
+.hljs-link,
+.hljs-params,
+.hljs-property,
+.hljs-punctuation,
+.hljs-tag {
+  /* purposely ignored */
+  
+}/*# sourceURL=/opt/hostedtoolcache/node/18.19.1/x64/lib/node_modules/md-to-pdf/node_modules/highlight.js/styles/github.css*/</style></head>
+	<body class="">
+		<h1 id="fonctions">Fonctions</h1>
+<h2 id="exercice-1">Exercice 1</h2>
+<pre><code class="hljs go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">"fmt"</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">add</span><span class="hljs-params">(a, b <span class="hljs-type">int</span>)</span></span> <span class="hljs-type">int</span> {
+    <span class="hljs-keyword">return</span> a + b
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">multiply</span><span class="hljs-params">(a, b <span class="hljs-type">int</span>)</span></span> <span class="hljs-type">int</span> {
+    <span class="hljs-keyword">return</span> a * b
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">greet</span><span class="hljs-params">(name <span class="hljs-type">string</span>)</span></span> <span class="hljs-type">string</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"Hello "</span> + name
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">isEven</span><span class="hljs-params">(a <span class="hljs-type">int</span>)</span></span> <span class="hljs-type">bool</span> {
+    <span class="hljs-keyword">return</span> a % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">average</span><span class="hljs-params">(numbers []<span class="hljs-type">float64</span>)</span></span> <span class="hljs-type">float64</span> {
+    <span class="hljs-keyword">var</span> sum <span class="hljs-type">float64</span>
+    <span class="hljs-keyword">for</span> _, number := <span class="hljs-keyword">range</span> numbers {
+        sum += number
+    }
+    <span class="hljs-keyword">return</span> sum / <span class="hljs-type">float64</span>(<span class="hljs-built_in">len</span>(numbers))
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+    fmt.Println(add(<span class="hljs-number">5</span>, <span class="hljs-number">3</span>))
+    fmt.Println(multiply(<span class="hljs-number">4</span>, <span class="hljs-number">7</span>))
+    fmt.Println(greet(<span class="hljs-string">"Alice"</span>))
+    fmt.Println(<span class="hljs-string">"6 is even:"</span>, isEven(<span class="hljs-number">6</span>))
+    fmt.Println(<span class="hljs-string">"9 is even:"</span>, isEven(<span class="hljs-number">9</span>))
+    fmt.Printf(<span class="hljs-string">"Average : %.2f\n"</span>, average([]<span class="hljs-type">float64</span>{<span class="hljs-number">2.5</span>, <span class="hljs-number">3.7</span>, <span class="hljs-number">4.8</span>}))
+}
+</code></pre>
+<h2 id="exercice-2">Exercice 2</h2>
+<pre><code class="hljs go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">"bufio"</span>
+    <span class="hljs-string">"fmt"</span>
+    <span class="hljs-string">"math/rand"</span>
+    <span class="hljs-string">"os"</span>
+    <span class="hljs-string">"strconv"</span>
+)
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">generatePassword</span><span class="hljs-params">(length <span class="hljs-type">int</span>, uppercase <span class="hljs-type">bool</span>, lowercase <span class="hljs-type">bool</span>, numbers <span class="hljs-type">bool</span>, specials <span class="hljs-type">bool</span>)</span></span> <span class="hljs-type">string</span> {
+    password := <span class="hljs-string">""</span>
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; length; i++ {
+        password += getRandomChar(uppercase, lowercase, numbers, specials)
+    }
+    <span class="hljs-keyword">return</span> password
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">getRandomChar</span><span class="hljs-params">(uppercase <span class="hljs-type">bool</span>, lowercase <span class="hljs-type">bool</span>, numbers <span class="hljs-type">bool</span>, specials <span class="hljs-type">bool</span>)</span></span> <span class="hljs-type">string</span> {
+    numberChar := <span class="hljs-string">"0123456789"</span>
+    uppercaseChar := <span class="hljs-string">"ABCDEFGHIJKLMNOPQRSTUVWXYZ"</span>
+    lowercaseChar := <span class="hljs-string">"abcdefghijklmnopqrstuvwxyz"</span>
+    specialsChar := <span class="hljs-string">"!\"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\\]^_`{|}~"</span>
+
+    possibleChars := <span class="hljs-string">""</span>
+    <span class="hljs-keyword">if</span> uppercase {
+        possibleChars += uppercaseChar
+    }
+    <span class="hljs-keyword">if</span> lowercase {
+        possibleChars += lowercaseChar
+    }
+    <span class="hljs-keyword">if</span> numbers {
+        possibleChars += numberChar
+    }
+    <span class="hljs-keyword">if</span> specials {
+        possibleChars += specialsChar
+    }
+
+    <span class="hljs-keyword">return</span> <span class="hljs-type">string</span>(possibleChars[rand.Intn(<span class="hljs-built_in">len</span>(possibleChars))])
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">promptUserBoolean</span><span class="hljs-params">(scanner *bufio.Scanner, question <span class="hljs-type">string</span>)</span></span> <span class="hljs-type">bool</span> {
+    <span class="hljs-keyword">for</span> {
+        fmt.Print(question)
+        scanner.Scan()
+        <span class="hljs-keyword">switch</span> scanner.Text() {
+        <span class="hljs-keyword">case</span> <span class="hljs-string">"Oui"</span>, <span class="hljs-string">"oui"</span>, <span class="hljs-string">"O"</span>, <span class="hljs-string">"o"</span>:
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+        <span class="hljs-keyword">case</span> <span class="hljs-string">"Non"</span>, <span class="hljs-string">"non"</span>, <span class="hljs-string">"N"</span>, <span class="hljs-string">"n"</span>:
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+        <span class="hljs-keyword">default</span>:
+            fmt.Print(<span class="hljs-string">"Veuillez entrer une réponse valide : "</span>)
+        }
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">promptUserInt</span><span class="hljs-params">(scanner *bufio.Scanner, question <span class="hljs-type">string</span>, minimum <span class="hljs-type">int</span>)</span></span> <span class="hljs-type">int</span>{
+    <span class="hljs-keyword">var</span> number <span class="hljs-type">int</span>
+    <span class="hljs-keyword">var</span> err <span class="hljs-type">error</span>
+    <span class="hljs-keyword">for</span> {
+        fmt.Print(question)
+        scanner.Scan()
+        number, err = strconv.Atoi(scanner.Text())
+        <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+            fmt.Print(<span class="hljs-string">"Veuillez entrer un nombre valide : "</span>)
+            <span class="hljs-keyword">continue</span>
+        }
+        <span class="hljs-keyword">if</span> number &lt; minimum {
+            fmt.Print(<span class="hljs-string">"Veuillez entrer un nombre supérieur ou égal à"</span>, minimum, <span class="hljs-string">" : "</span>)
+            <span class="hljs-keyword">continue</span>
+        }
+        <span class="hljs-keyword">return</span> number
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+    scanner := bufio.NewScanner(os.Stdin)
+    <span class="hljs-keyword">var</span> passwordLength <span class="hljs-type">int</span>
+    <span class="hljs-keyword">var</span> uppercase, lowercase, numbers, specials <span class="hljs-type">bool</span>
+
+    fmt.Println(<span class="hljs-string">"Générateur de Mot de Passe Améliorée"</span>)
+    fmt.Println(<span class="hljs-string">"====================================\n"</span>)
+
+    passwordLength = promptUserInt(scanner, <span class="hljs-string">"Entrez la longueur du mot de passe : "</span>, <span class="hljs-number">1</span>)
+    fmt.Println()
+    uppercase = promptUserBoolean(scanner, <span class="hljs-string">"Inclure des majuscules ? (Oui/Non) : "</span>)
+    lowercase = promptUserBoolean(scanner, <span class="hljs-string">"Inclure des minuscules ? (Oui/Non) : "</span>)
+    numbers = promptUserBoolean(scanner, <span class="hljs-string">"Inclure des chiffres ? (Oui/Non) : "</span>)
+    specials = promptUserBoolean(scanner, <span class="hljs-string">"Inclure des caractères spéciaux ? (Oui/Non) : "</span>)
+    fmt.Println()
+
+    <span class="hljs-keyword">if</span> !uppercase &amp;&amp; !lowercase &amp;&amp; !numbers &amp;&amp; !specials {
+        fmt.Println(<span class="hljs-string">"Vous devez choisir au moins une option."</span>)
+        <span class="hljs-keyword">return</span>
+    }
+
+    password := generatePassword(passwordLength, uppercase, lowercase, numbers, specials)
+    fmt.Println(<span class="hljs-string">"Mot de passe généré :"</span>, password)
+
+}
+</code></pre>
+<h2 id="exercice-3">Exercice 3</h2>
+<pre><code class="hljs go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">"bufio"</span>
+    <span class="hljs-string">"fmt"</span>
+    <span class="hljs-string">"os"</span>
+    <span class="hljs-string">"strconv"</span>
+)
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">convertToCelsius</span><span class="hljs-params">(temperature <span class="hljs-type">float64</span>, scaleFrom <span class="hljs-type">string</span>)</span></span> <span class="hljs-type">float64</span> {
+    <span class="hljs-keyword">switch</span> scaleFrom {
+    <span class="hljs-keyword">case</span> <span class="hljs-string">"Celsius"</span>:
+        <span class="hljs-keyword">return</span> temperature
+    <span class="hljs-keyword">case</span> <span class="hljs-string">"Fahrenheit"</span>:
+        <span class="hljs-keyword">return</span> (temperature - <span class="hljs-number">32</span>) * <span class="hljs-number">5</span> / <span class="hljs-number">9</span>
+    <span class="hljs-keyword">case</span> <span class="hljs-string">"Kelvin"</span>:
+        <span class="hljs-keyword">return</span> temperature - <span class="hljs-number">273.15</span>
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">convertToFahrenheit</span><span class="hljs-params">(temperature <span class="hljs-type">float64</span>, scaleFrom <span class="hljs-type">string</span>)</span></span> <span class="hljs-type">float64</span> {
+    <span class="hljs-keyword">switch</span> scaleFrom {
+    <span class="hljs-keyword">case</span> <span class="hljs-string">"Celsius"</span>:
+        <span class="hljs-keyword">return</span> temperature*<span class="hljs-number">9</span>/<span class="hljs-number">5</span> + <span class="hljs-number">32</span>
+    <span class="hljs-keyword">case</span> <span class="hljs-string">"Fahrenheit"</span>:
+        <span class="hljs-keyword">return</span> temperature
+    <span class="hljs-keyword">case</span> <span class="hljs-string">"Kelvin"</span>:
+        <span class="hljs-keyword">return</span> temperature*<span class="hljs-number">9</span>/<span class="hljs-number">5</span> - <span class="hljs-number">459.67</span>
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">convertToKelvin</span><span class="hljs-params">(temperature <span class="hljs-type">float64</span>, scaleFrom <span class="hljs-type">string</span>)</span></span> <span class="hljs-type">float64</span> {
+    <span class="hljs-keyword">switch</span> scaleFrom {
+    <span class="hljs-keyword">case</span> <span class="hljs-string">"Celsius"</span>:
+        <span class="hljs-keyword">return</span> temperature + <span class="hljs-number">273.15</span>
+    <span class="hljs-keyword">case</span> <span class="hljs-string">"Fahrenheit"</span>:
+        <span class="hljs-keyword">return</span> (temperature + <span class="hljs-number">459.67</span>) * <span class="hljs-number">5</span> / <span class="hljs-number">9</span>
+    <span class="hljs-keyword">case</span> <span class="hljs-string">"Kelvin"</span>:
+        <span class="hljs-keyword">return</span> temperature
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">convertTemperature</span><span class="hljs-params">(temperature <span class="hljs-type">string</span>, scaleFrom <span class="hljs-type">string</span>, scaleTo <span class="hljs-type">string</span>)</span></span> <span class="hljs-type">float64</span> {
+    temp, _ := strconv.ParseFloat(temperature, <span class="hljs-number">64</span>)
+
+    <span class="hljs-keyword">switch</span> scaleTo {
+    <span class="hljs-keyword">case</span> <span class="hljs-string">"Celsius"</span>:
+        <span class="hljs-keyword">return</span> convertToCelsius(temp, scaleFrom)
+    <span class="hljs-keyword">case</span> <span class="hljs-string">"Fahrenheit"</span>:
+        <span class="hljs-keyword">return</span> convertToFahrenheit(temp, scaleFrom)
+    <span class="hljs-keyword">case</span> <span class="hljs-string">"Kelvin"</span>:
+        <span class="hljs-keyword">return</span> convertToKelvin(temp, scaleFrom)
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+    fmt.Println(<span class="hljs-string">"Convertisseur de Température"</span>)
+    fmt.Println(<span class="hljs-string">"---------------------------"</span>)
+    fmt.Println(<span class="hljs-string">"1. Celsius vers Fahrenheit"</span>)
+    fmt.Println(<span class="hljs-string">"2. Celsius vers Kelvin"</span>)
+    fmt.Println(<span class="hljs-string">"3. Fahrenheit vers Celsius"</span>)
+    fmt.Println(<span class="hljs-string">"4. Fahrenheit vers Kelvin"</span>)
+    fmt.Println(<span class="hljs-string">"5. Kelvin vers Celsius"</span>)
+    fmt.Println(<span class="hljs-string">"6. Kelvin vers Fahrenheit"</span>)
+    fmt.Println()
+    fmt.Print(<span class="hljs-string">"Sélectionnez une option : "</span>)
+
+    in := bufio.NewScanner(os.Stdin)
+
+    in.Scan()
+
+    <span class="hljs-keyword">switch</span> in.Text() {
+    <span class="hljs-keyword">case</span> <span class="hljs-string">"1"</span>:
+        fmt.Print(<span class="hljs-string">"Entrez la température en degrés Celsius : "</span>)
+        in.Scan()
+        temperature := in.Text()
+        fmt.Printf(<span class="hljs-string">"Température en Fahrenheit : %.2f\n"</span>, convertTemperature(temperature, <span class="hljs-string">"Celsius"</span>, <span class="hljs-string">"Fahrenheit"</span>))
+    <span class="hljs-keyword">case</span> <span class="hljs-string">"2"</span>:
+        fmt.Print(<span class="hljs-string">"Entrez la température en degrés Celsius : "</span>)
+        in.Scan()
+        temperature := in.Text()
+        fmt.Printf(<span class="hljs-string">"Température en Kelvin : %.2f\n"</span>, convertTemperature(temperature, <span class="hljs-string">"Celsius"</span>, <span class="hljs-string">"Kelvin"</span>))
+    <span class="hljs-keyword">case</span> <span class="hljs-string">"3"</span>:
+        fmt.Print(<span class="hljs-string">"Entrez la température en degrés Fahrenheit : "</span>)
+        in.Scan()
+        temperature := in.Text()
+        fmt.Printf(<span class="hljs-string">"Température en Celsius : %.2f\n"</span>, convertTemperature(temperature, <span class="hljs-string">"Fahrenheit"</span>, <span class="hljs-string">"Celsius"</span>))
+    <span class="hljs-keyword">case</span> <span class="hljs-string">"4"</span>:
+        fmt.Print(<span class="hljs-string">"Entrez la température en degrés Fahrenheit : "</span>)
+        in.Scan()
+        temperature := in.Text()
+        fmt.Printf(<span class="hljs-string">"Température en Kelvin : %.2f\n"</span>, convertTemperature(temperature, <span class="hljs-string">"Fahrenheit"</span>, <span class="hljs-string">"Kelvin"</span>))
+    <span class="hljs-keyword">case</span> <span class="hljs-string">"5"</span>:
+        fmt.Print(<span class="hljs-string">"Entrez la température en degrés Kelvin : "</span>)
+        in.Scan()
+        temperature := in.Text()
+        fmt.Printf(<span class="hljs-string">"Température en Celsius : %.2f\n"</span>, convertTemperature(temperature, <span class="hljs-string">"Kelvin"</span>, <span class="hljs-string">"Celsius"</span>))
+    <span class="hljs-keyword">case</span> <span class="hljs-string">"6"</span>:
+        fmt.Print(<span class="hljs-string">"Entrez la température en degrés Kelvin : "</span>)
+        in.Scan()
+        temperature := in.Text()
+        fmt.Printf(<span class="hljs-string">"Température en Fahrenheit : %.2f\n"</span>, convertTemperature(temperature, <span class="hljs-string">"Kelvin"</span>, <span class="hljs-string">"Fahrenheit"</span>))
+    <span class="hljs-keyword">default</span>:
+        fmt.Println(<span class="hljs-string">"Option invalide"</span>)
+    }
+
+}
+</code></pre>
+<h2 id="exercice-4">Exercice 4</h2>
+<pre><code class="hljs go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">"bufio"</span>
+    <span class="hljs-string">"fmt"</span>
+    <span class="hljs-string">"os"</span>
+    <span class="hljs-string">"strconv"</span>
+    <span class="hljs-string">"strings"</span>
+)
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">createBadge</span><span class="hljs-params">(name <span class="hljs-type">string</span>, title <span class="hljs-type">string</span>)</span></span> <span class="hljs-type">string</span> {
+    <span class="hljs-keyword">return</span> strings.Repeat(<span class="hljs-string">"*"</span>, <span class="hljs-number">17</span>) + <span class="hljs-string">"\n"</span> +
+        <span class="hljs-string">"Nom: "</span> + name + <span class="hljs-string">"\n"</span> +
+        <span class="hljs-string">"Titre: "</span> + title + <span class="hljs-string">"\n"</span> +
+        strings.Repeat(<span class="hljs-string">"*"</span>, <span class="hljs-number">17</span>)
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">promptParticipant</span><span class="hljs-params">(i <span class="hljs-type">int</span>)</span></span> (<span class="hljs-type">string</span>, <span class="hljs-type">string</span>) {
+    <span class="hljs-keyword">var</span> in = bufio.NewScanner(os.Stdin)
+    <span class="hljs-keyword">var</span> name, title <span class="hljs-type">string</span>
+    fmt.Printf(<span class="hljs-string">"Participant %d :\n"</span>, i)
+    fmt.Print(<span class="hljs-string">"Entrez le nom : "</span>)
+    in.Scan()
+    name = in.Text()
+    fmt.Print(<span class="hljs-string">"Entrez le titre : "</span>)
+    in.Scan()
+    title = in.Text()
+
+    <span class="hljs-keyword">return</span> name, title
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+    fmt.Println(<span class="hljs-string">"Générateur de Badges pour un Événement"</span>)
+    fmt.Println(<span class="hljs-string">"--------------------------------------\n"</span>)
+
+    <span class="hljs-keyword">var</span> in = bufio.NewScanner(os.Stdin)
+    fmt.Print(<span class="hljs-string">"Combien de participants sont présents à l'événement ? : "</span>)
+    in.Scan()
+    nbParticipants, _ := strconv.Atoi(in.Text())
+
+    <span class="hljs-keyword">var</span> badges []<span class="hljs-type">string</span>
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">1</span>; i &lt;= nbParticipants; i++ {
+        name, title := promptParticipant(i)
+        fmt.Println()
+        badges = <span class="hljs-built_in">append</span>(badges, createBadge(name, title))
+    }
+
+    fmt.Println(<span class="hljs-string">"\nBadges générés pour l'événement :"</span>)
+    <span class="hljs-keyword">for</span> _, badge := <span class="hljs-keyword">range</span> badges {
+        fmt.Println(badge)
+    }
+}
+</code></pre>
+
+	
+
+</body></html>
