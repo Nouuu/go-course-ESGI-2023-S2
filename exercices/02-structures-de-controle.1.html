@@ -1,0 +1,401 @@
+<!DOCTYPE html><html><head><title></title><meta charset="utf-8"><style>* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	line-height: 1.6;
+	font-size: 0.6875em; /* 11 pt */
+	color: #111;
+	margin: 0;
+}
+
+body > :first-child {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+body > :last-child {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0.5em 0 0.25em;
+}
+
+h5,
+h6 {
+	padding: 0;
+}
+
+h5 {
+	font-size: 1em;
+}
+
+h6 {
+	font-size: 0.875em;
+	text-transform: uppercase;
+}
+
+p {
+	margin: 0.25em 0 1em;
+}
+
+blockquote {
+	margin: 0.5em 0 1em;
+	padding-left: 0.5em;
+	padding-right: 1em;
+	border-left: 4px solid gainsboro;
+	font-style: italic;
+}
+
+ul,
+ol {
+	margin: 0;
+	margin-left: 1em;
+	padding: 0 1.5em 0.5em;
+}
+
+pre {
+	white-space: pre-wrap;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code,
+p code,
+li code,
+pre code {
+	background-color: #f8f8f8;
+	padding: 0.1em 0.375em;
+	border: 1px solid #f8f8f8;
+	border-radius: 0.25em;
+	font-family: monospace;
+	font-size: 1.2em;
+}
+
+pre code {
+	display: block;
+	padding: 0.5em;
+}
+
+.page-break {
+	page-break-after: always;
+}
+
+img {
+	max-width: 100%;
+	margin: 1em 0;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	display: block;
+	margin: 0 0 1em;
+	width: 100%;
+	overflow: auto;
+}
+
+table th,
+table td {
+	padding: 0.5em 1em;
+	border: 1px solid gainsboro;
+}
+
+table th {
+	font-weight: 600;
+}
+
+table tr {
+	background-color: white;
+	border-top: 1px solid gainsboro;
+}
+
+table tr:nth-child(2n) {
+	background-color: whitesmoke;
+}
+/*# sourceURL=/opt/hostedtoolcache/node/18.19.1/x64/lib/node_modules/md-to-pdf/markdown.css*/</style><style>pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em
+}
+code.hljs {
+  padding: 3px 5px
+}
+/*!
+  Theme: GitHub
+  Description: Light theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-light
+  Current colors taken from GitHub's CSS
+*/
+.hljs {
+  color: #24292e;
+  background: #ffffff
+}
+.hljs-doctag,
+.hljs-keyword,
+.hljs-meta .hljs-keyword,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-variable.language_ {
+  /* prettylights-syntax-keyword */
+  color: #d73a49
+}
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.class_.inherited__,
+.hljs-title.function_ {
+  /* prettylights-syntax-entity */
+  color: #6f42c1
+}
+.hljs-attr,
+.hljs-attribute,
+.hljs-literal,
+.hljs-meta,
+.hljs-number,
+.hljs-operator,
+.hljs-variable,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-id {
+  /* prettylights-syntax-constant */
+  color: #005cc5
+}
+.hljs-regexp,
+.hljs-string,
+.hljs-meta .hljs-string {
+  /* prettylights-syntax-string */
+  color: #032f62
+}
+.hljs-built_in,
+.hljs-symbol {
+  /* prettylights-syntax-variable */
+  color: #e36209
+}
+.hljs-comment,
+.hljs-code,
+.hljs-formula {
+  /* prettylights-syntax-comment */
+  color: #6a737d
+}
+.hljs-name,
+.hljs-quote,
+.hljs-selector-tag,
+.hljs-selector-pseudo {
+  /* prettylights-syntax-entity-tag */
+  color: #22863a
+}
+.hljs-subst {
+  /* prettylights-syntax-storage-modifier-import */
+  color: #24292e
+}
+.hljs-section {
+  /* prettylights-syntax-markup-heading */
+  color: #005cc5;
+  font-weight: bold
+}
+.hljs-bullet {
+  /* prettylights-syntax-markup-list */
+  color: #735c0f
+}
+.hljs-emphasis {
+  /* prettylights-syntax-markup-italic */
+  color: #24292e;
+  font-style: italic
+}
+.hljs-strong {
+  /* prettylights-syntax-markup-bold */
+  color: #24292e;
+  font-weight: bold
+}
+.hljs-addition {
+  /* prettylights-syntax-markup-inserted */
+  color: #22863a;
+  background-color: #f0fff4
+}
+.hljs-deletion {
+  /* prettylights-syntax-markup-deleted */
+  color: #b31d28;
+  background-color: #ffeef0
+}
+.hljs-char.escape_,
+.hljs-link,
+.hljs-params,
+.hljs-property,
+.hljs-punctuation,
+.hljs-tag {
+  /* purposely ignored */
+  
+}/*# sourceURL=/opt/hostedtoolcache/node/18.19.1/x64/lib/node_modules/md-to-pdf/node_modules/highlight.js/styles/github.css*/</style></head>
+	<body class="">
+		<h1 id="structures-de-contrôle">Structures de contrôle</h1>
+<h2 id="exercice-1">Exercice 1</h2>
+<p>Commençons simplement. Affichez les résultats attendus en fonction de la variable <code>age</code>.</p>
+<pre><code class="hljs go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+    <span class="hljs-comment">// Modifiez ceci en conséquence pour produire les résultats attendus</span>
+    <span class="hljs-comment">// age := 10</span>
+
+    <span class="hljs-comment">// Saisissez votre instruction if ici.</span>
+}
+</code></pre>
+<p><strong>Résultat attendu</strong></p>
+<pre><code>Si l'âge est supérieur à 60, affichez :
+    Getting older
+Si l'âge est supérieur à 30, affichez :
+    Getting wiser
+Si l'âge est supérieur à 20, affichez :
+    Adulthood
+Si l'âge est supérieur à 10, affichez :
+    Young blood
+Sinon, affichez :
+    Booting up
+</code></pre>
+<h2 id="exercice-2">Exercice 2</h2>
+<p>Pouvez-vous simplifier l'instruction <code>if</code> dans le code ci-dessous ?</p>
+<p>Lorsque :</p>
+<ul>
+<li><code>isSphere</code> est vrai (true)</li>
+<li>Le rayon (<code>radius</code>) est égal ou supérieur à 200</li>
+</ul>
+<p>Il devrait afficher "C'est une grosse sphère."</p>
+<p>Sinon, il devrait afficher "Je ne sais pas."</p>
+<pre><code class="hljs go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">"fmt"</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+    <span class="hljs-comment">// NE MODIFIEZ PAS CE CODE</span>
+    isSphere, radius := <span class="hljs-literal">true</span>, <span class="hljs-number">200</span>
+
+    <span class="hljs-keyword">var</span> big <span class="hljs-type">bool</span>
+
+    <span class="hljs-comment">// Simplifiez cette structure if imbriquée</span>
+    <span class="hljs-keyword">if</span> radius &gt;= <span class="hljs-number">200</span> {
+        big = <span class="hljs-literal">true</span>
+    }
+
+    <span class="hljs-keyword">if</span> !big {
+        fmt.Println(<span class="hljs-string">"Je ne sais pas."</span>)
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> isSphere {
+        fmt.Println(<span class="hljs-string">"C'est une grosse sphère."</span>)
+    } <span class="hljs-keyword">else</span> {
+        fmt.Println(<span class="hljs-string">"Je ne sais pas."</span>)
+    }
+}
+</code></pre>
+<p><strong>Résultat attendu</strong></p>
+<pre><code>C'est une grosse sphère.
+</code></pre>
+<h2 id="exercice-3">Exercice 3</h2>
+<p>Refactorez le code suivant pour utilser une instruction <code>switch</code> à la place de <code>if</code>/<code>else</code>.</p>
+<p>"Impression du nombre de jours dans un mois donné."</p>
+<p>Indice : Pour utiliser les arguments en Go, consultez les documentations :</p>
+<ul>
+<li><a href="https://gobyexample.com/command-line-arguments">https://gobyexample.com/command-line-arguments</a></li>
+<li><a href="https://yourbasic.org/golang/command-line-arguments/">https://yourbasic.org/golang/command-line-arguments/</a></li>
+</ul>
+<pre><code class="hljs go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">"fmt"</span>
+    <span class="hljs-string">"os"</span>
+    <span class="hljs-string">"strings"</span>
+    <span class="hljs-string">"time"</span>
+)
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(os.Args) != <span class="hljs-number">2</span> {
+        fmt.Println(<span class="hljs-string">"Donnez-moi un nom de mois"</span>)
+        <span class="hljs-keyword">return</span>
+    }
+
+    year := time.Now().Year()
+    leap := year%<span class="hljs-number">4</span> == <span class="hljs-number">0</span> &amp;&amp; (year%<span class="hljs-number">100</span> != <span class="hljs-number">0</span> || year%<span class="hljs-number">400</span> == <span class="hljs-number">0</span>)
+
+    days, month := <span class="hljs-number">28</span>, os.Args[<span class="hljs-number">1</span>]
+
+    <span class="hljs-keyword">if</span> m := strings.ToLower(month); m == <span class="hljs-string">"avril"</span> ||
+        m == <span class="hljs-string">"juin"</span> ||
+        m == <span class="hljs-string">"septembre"</span> ||
+        m == <span class="hljs-string">"novembre"</span> {
+        days = <span class="hljs-number">30</span>
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> m == <span class="hljs-string">"janvier"</span> ||
+        m == <span class="hljs-string">"mars"</span> ||
+        m == <span class="hljs-string">"mai"</span> ||
+        m == <span class="hljs-string">"juillet"</span> ||
+        m == <span class="hljs-string">"aout"</span> ||
+        m == <span class="hljs-string">"octobre"</span> ||
+        m == <span class="hljs-string">"decembre"</span> {
+        days = <span class="hljs-number">31</span>
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> m == <span class="hljs-string">"fevrier"</span> {
+        <span class="hljs-keyword">if</span> leap {
+            days = <span class="hljs-number">29</span>
+        }
+    } <span class="hljs-keyword">else</span> {
+        fmt.Printf(<span class="hljs-string">"%q n'est pas un mois valide.\n"</span>, month)
+        <span class="hljs-keyword">return</span>
+    }
+
+    fmt.Printf(<span class="hljs-string">"%q a %d jours.\n"</span>, month, days)
+}
+</code></pre>
+<h2 id="exercice-4">Exercice 4</h2>
+<ol>
+<li>À l'aide d'une boucle, additionnez les nombres de 1 à 10.</li>
+<li>Affichez la somme.</li>
+</ol>
+<pre><code class="hljs go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">"fmt"</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+    <span class="hljs-comment">// Votre code ici</span>
+}
+</code></pre>
+<h2 id="exercice-5">Exercice 5</h2>
+<ol>
+<li>Étendez l'exercice "Somme jusqu'à 10".</li>
+<li>Affichez les chiffres additionnés.</li>
+<li>Additionnez uniquement les nombres pairs. <ul>
+<li>Ignorez les nombres impairs en utilisant l'instruction <code>continue</code>.</li>
+</ul>
+</li>
+</ol>
+<pre><code class="hljs go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">"fmt"</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+    <span class="hljs-comment">// Votre code ici</span>
+}
+</code></pre>
+<p><strong>Résultat attendu</strong></p>
+<pre><code>2 + 4 + 6 + 8 + 10 = 30
+</code></pre>
+
+	
+
+</body></html>
