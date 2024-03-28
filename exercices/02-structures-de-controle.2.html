@@ -1,0 +1,369 @@
+<!DOCTYPE html><html><head><title></title><meta charset="utf-8"><style>* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	line-height: 1.6;
+	font-size: 0.6875em; /* 11 pt */
+	color: #111;
+	margin: 0;
+}
+
+body > :first-child {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+body > :last-child {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0.5em 0 0.25em;
+}
+
+h5,
+h6 {
+	padding: 0;
+}
+
+h5 {
+	font-size: 1em;
+}
+
+h6 {
+	font-size: 0.875em;
+	text-transform: uppercase;
+}
+
+p {
+	margin: 0.25em 0 1em;
+}
+
+blockquote {
+	margin: 0.5em 0 1em;
+	padding-left: 0.5em;
+	padding-right: 1em;
+	border-left: 4px solid gainsboro;
+	font-style: italic;
+}
+
+ul,
+ol {
+	margin: 0;
+	margin-left: 1em;
+	padding: 0 1.5em 0.5em;
+}
+
+pre {
+	white-space: pre-wrap;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code,
+p code,
+li code,
+pre code {
+	background-color: #f8f8f8;
+	padding: 0.1em 0.375em;
+	border: 1px solid #f8f8f8;
+	border-radius: 0.25em;
+	font-family: monospace;
+	font-size: 1.2em;
+}
+
+pre code {
+	display: block;
+	padding: 0.5em;
+}
+
+.page-break {
+	page-break-after: always;
+}
+
+img {
+	max-width: 100%;
+	margin: 1em 0;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	display: block;
+	margin: 0 0 1em;
+	width: 100%;
+	overflow: auto;
+}
+
+table th,
+table td {
+	padding: 0.5em 1em;
+	border: 1px solid gainsboro;
+}
+
+table th {
+	font-weight: 600;
+}
+
+table tr {
+	background-color: white;
+	border-top: 1px solid gainsboro;
+}
+
+table tr:nth-child(2n) {
+	background-color: whitesmoke;
+}
+/*# sourceURL=/opt/hostedtoolcache/node/18.19.1/x64/lib/node_modules/md-to-pdf/markdown.css*/</style><style>pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em
+}
+code.hljs {
+  padding: 3px 5px
+}
+/*!
+  Theme: GitHub
+  Description: Light theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-light
+  Current colors taken from GitHub's CSS
+*/
+.hljs {
+  color: #24292e;
+  background: #ffffff
+}
+.hljs-doctag,
+.hljs-keyword,
+.hljs-meta .hljs-keyword,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-variable.language_ {
+  /* prettylights-syntax-keyword */
+  color: #d73a49
+}
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.class_.inherited__,
+.hljs-title.function_ {
+  /* prettylights-syntax-entity */
+  color: #6f42c1
+}
+.hljs-attr,
+.hljs-attribute,
+.hljs-literal,
+.hljs-meta,
+.hljs-number,
+.hljs-operator,
+.hljs-variable,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-id {
+  /* prettylights-syntax-constant */
+  color: #005cc5
+}
+.hljs-regexp,
+.hljs-string,
+.hljs-meta .hljs-string {
+  /* prettylights-syntax-string */
+  color: #032f62
+}
+.hljs-built_in,
+.hljs-symbol {
+  /* prettylights-syntax-variable */
+  color: #e36209
+}
+.hljs-comment,
+.hljs-code,
+.hljs-formula {
+  /* prettylights-syntax-comment */
+  color: #6a737d
+}
+.hljs-name,
+.hljs-quote,
+.hljs-selector-tag,
+.hljs-selector-pseudo {
+  /* prettylights-syntax-entity-tag */
+  color: #22863a
+}
+.hljs-subst {
+  /* prettylights-syntax-storage-modifier-import */
+  color: #24292e
+}
+.hljs-section {
+  /* prettylights-syntax-markup-heading */
+  color: #005cc5;
+  font-weight: bold
+}
+.hljs-bullet {
+  /* prettylights-syntax-markup-list */
+  color: #735c0f
+}
+.hljs-emphasis {
+  /* prettylights-syntax-markup-italic */
+  color: #24292e;
+  font-style: italic
+}
+.hljs-strong {
+  /* prettylights-syntax-markup-bold */
+  color: #24292e;
+  font-weight: bold
+}
+.hljs-addition {
+  /* prettylights-syntax-markup-inserted */
+  color: #22863a;
+  background-color: #f0fff4
+}
+.hljs-deletion {
+  /* prettylights-syntax-markup-deleted */
+  color: #b31d28;
+  background-color: #ffeef0
+}
+.hljs-char.escape_,
+.hljs-link,
+.hljs-params,
+.hljs-property,
+.hljs-punctuation,
+.hljs-tag {
+  /* purposely ignored */
+  
+}/*# sourceURL=/opt/hostedtoolcache/node/18.19.1/x64/lib/node_modules/md-to-pdf/node_modules/highlight.js/styles/github.css*/</style></head>
+	<body class="">
+		<h1 id="tableaux-et-tranches">Tableaux et Tranches</h1>
+<h2 id="exercice-1">Exercice 1</h2>
+<ul>
+<li>Exécutez d'abord le programme suivant tel quel.</li>
+<li>Ensuite, changez les déclarations de tableaux en déclarations de tranches (slices).</li>
+<li>Observez si quelque chose change ou non (en surface :)).</li>
+</ul>
+<pre><code class="hljs go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">"fmt"</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+    names := [<span class="hljs-number">3</span>]<span class="hljs-type">string</span>{<span class="hljs-string">"Einstein"</span>, <span class="hljs-string">"Tesla"</span>, <span class="hljs-string">"Shepard"</span>}
+    distances := [...]<span class="hljs-type">int</span>{<span class="hljs-number">50</span>, <span class="hljs-number">40</span>, <span class="hljs-number">75</span>, <span class="hljs-number">30</span>, <span class="hljs-number">125</span>}
+    data := [<span class="hljs-number">5</span>]<span class="hljs-type">byte</span>{<span class="hljs-string">'H'</span>, <span class="hljs-string">'E'</span>, <span class="hljs-string">'L'</span>, <span class="hljs-string">'L'</span>, <span class="hljs-string">'O'</span>}
+    ratios := [<span class="hljs-number">1</span>]<span class="hljs-type">float64</span>{<span class="hljs-number">3.14145</span>}
+    alives := [...]<span class="hljs-type">bool</span>{<span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>}
+    zero := [<span class="hljs-number">0</span>]<span class="hljs-type">byte</span>{}
+
+    fmt.Printf(<span class="hljs-string">"names    : %T %q\n"</span>, names)
+    fmt.Printf(<span class="hljs-string">"distances: %T %d\n"</span>, distances)
+    fmt.Printf(<span class="hljs-string">"data     : %T %d\n"</span>, data)
+    fmt.Printf(<span class="hljs-string">"ratios   : %T %.2f\n"</span>, ratios[<span class="hljs-number">0</span>])
+    fmt.Printf(<span class="hljs-string">"alives   : %T %t\n"</span>, alives)
+    fmt.Printf(<span class="hljs-string">"zero     : %T %d\n"</span>, zero)
+}
+</code></pre>
+<h2 id="exercice-2">Exercice 2</h2>
+<ul>
+<li>Divisez la chaîne de caractères <code>namesA</code> et obtenez une tranche (slice).</li>
+<li>Triez toutes les tranches.</li>
+<li>Comparez si les tranches sont égales ou non</li>
+</ul>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+    <span class="hljs-comment">// namesA := "Da Vinci, Wozniak, Carmack"</span>
+    <span class="hljs-comment">// namesB := []string{"Wozniak", "Da Vinci", "Carmack"}</span>
+}
+</code></pre>
+<p><strong>Indices</strong> :</p>
+<ul>
+<li>La fonction <code>strings.Split</code> divise une chaîne de caractères et renvoie une tranche (slice) de chaînes de caractères.</li>
+<li>La fonction <code>sort.Strings</code> trie une tranche (slice) de chaînes de caractères.</li>
+<li>Pour comparer des tranches (slices) : commencez par vérifier si leur longueur est la même ou non ; seulement ensuite
+comparez-les.</li>
+</ul>
+<p><strong>Sortie attendue</strong> :</p>
+<pre><code>Ils sont égaux.
+</code></pre>
+<h2 id="exercice-3">Exercice 3</h2>
+<ul>
+<li>Créez les tranches (slices) vides suivantes :<ul>
+<li>Garnitures de pizza</li>
+<li>Heures de départ</li>
+<li>Années de diplomation des étudiants</li>
+<li>États marche/arrêt des lumières dans une pièce</li>
+</ul>
+</li>
+<li>Ajoutez-leur quelques éléments (faites preuve de créativité !).</li>
+<li>Affichez toutes les tranches (slices).</li>
+</ul>
+<pre><code class="hljs go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">"fmt"</span>
+    <span class="hljs-string">"time"</span>
+)
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+    <span class="hljs-comment">// Votre code ici</span>
+}
+</code></pre>
+<p><strong>Indices</strong> :</p>
+<ul>
+<li>Pour les heures de départ, utilisez le type time.Time. Consultez sa documentation (<a href="https://gobyexample.com/time">https://gobyexample.com/time</a>).</li>
+</ul>
+<pre><code class="hljs go">now := time.Now() -&gt; Vous donne l<span class="hljs-string">'heure actuelle
+now.Add(time.Hour*24) -&gt; Vous donne un time.Time 24 heures après now</span>
+</code></pre>
+<ul>
+<li>Pour les années de diplomation, vous pouvez utiliser le type int.</li>
+</ul>
+<p><strong>Résultat attendu</strong>
+(Votre résultat peut varier, le mien ressemble à ceci) :</p>
+<pre><code>pizza       : [pepperoni onions extra cheese]
+
+graduations : [1998 2005 2018]
+
+departures  : [2019-01-28 15:09:31.294594 +0300 +03 m=+0.000325020
+2019-01-29 15:09:31.294594 +0300 +03 m=+86400.000325020
+2019-01-30 15:09:31.294594 +0300 +03 m=+172800.000325020]
+
+lights      : [true false true]
+</code></pre>
+<h2 id="exercice-4">Exercice 4</h2>
+<p>Écrivez un programme qui ajoute des éléments à une tranche (slice) 10 millions de fois dans une boucle. Observez comment la capacité de la tranche (slice) change.</p>
+<ul>
+<li>Créez une tranche (slice) vide.</li>
+<li>Effectuez une boucle 10 millions de fois.</li>
+<li>À chaque itération : ajoutez un élément à la tranche (slice).</li>
+<li>Affichez la longueur (length) et la capacité (capacity) de la tranche (slice) uniquement lorsque sa capacité change.</li>
+</ul>
+<p><strong>BONUS</strong> : Affichez également le taux de croissance de la capacité.</p>
+<pre><code class="hljs go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+    <span class="hljs-comment">// Votre code ici</span>
+}
+</code></pre>
+<p><strong>Résultat attendu</strong> :</p>
+<pre><code>len:0 cap:0 growth:NaN
+len:1 cap:1 growth:+Inf
+len:2 cap:2 growth:2.00
+... et ainsi de suite...
+</code></pre>
+
+	
+
+</body></html>
