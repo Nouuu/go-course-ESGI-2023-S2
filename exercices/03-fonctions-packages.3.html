@@ -1,0 +1,444 @@
+<!DOCTYPE html><html><head><title></title><meta charset="utf-8"><style>* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	line-height: 1.6;
+	font-size: 0.6875em; /* 11 pt */
+	color: #111;
+	margin: 0;
+}
+
+body > :first-child {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+body > :last-child {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0.5em 0 0.25em;
+}
+
+h5,
+h6 {
+	padding: 0;
+}
+
+h5 {
+	font-size: 1em;
+}
+
+h6 {
+	font-size: 0.875em;
+	text-transform: uppercase;
+}
+
+p {
+	margin: 0.25em 0 1em;
+}
+
+blockquote {
+	margin: 0.5em 0 1em;
+	padding-left: 0.5em;
+	padding-right: 1em;
+	border-left: 4px solid gainsboro;
+	font-style: italic;
+}
+
+ul,
+ol {
+	margin: 0;
+	margin-left: 1em;
+	padding: 0 1.5em 0.5em;
+}
+
+pre {
+	white-space: pre-wrap;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code,
+p code,
+li code,
+pre code {
+	background-color: #f8f8f8;
+	padding: 0.1em 0.375em;
+	border: 1px solid #f8f8f8;
+	border-radius: 0.25em;
+	font-family: monospace;
+	font-size: 1.2em;
+}
+
+pre code {
+	display: block;
+	padding: 0.5em;
+}
+
+.page-break {
+	page-break-after: always;
+}
+
+img {
+	max-width: 100%;
+	margin: 1em 0;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	display: block;
+	margin: 0 0 1em;
+	width: 100%;
+	overflow: auto;
+}
+
+table th,
+table td {
+	padding: 0.5em 1em;
+	border: 1px solid gainsboro;
+}
+
+table th {
+	font-weight: 600;
+}
+
+table tr {
+	background-color: white;
+	border-top: 1px solid gainsboro;
+}
+
+table tr:nth-child(2n) {
+	background-color: whitesmoke;
+}
+/*# sourceURL=/opt/hostedtoolcache/node/18.19.1/x64/lib/node_modules/md-to-pdf/markdown.css*/</style><style>pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em
+}
+code.hljs {
+  padding: 3px 5px
+}
+/*!
+  Theme: GitHub
+  Description: Light theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-light
+  Current colors taken from GitHub's CSS
+*/
+.hljs {
+  color: #24292e;
+  background: #ffffff
+}
+.hljs-doctag,
+.hljs-keyword,
+.hljs-meta .hljs-keyword,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-variable.language_ {
+  /* prettylights-syntax-keyword */
+  color: #d73a49
+}
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.class_.inherited__,
+.hljs-title.function_ {
+  /* prettylights-syntax-entity */
+  color: #6f42c1
+}
+.hljs-attr,
+.hljs-attribute,
+.hljs-literal,
+.hljs-meta,
+.hljs-number,
+.hljs-operator,
+.hljs-variable,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-id {
+  /* prettylights-syntax-constant */
+  color: #005cc5
+}
+.hljs-regexp,
+.hljs-string,
+.hljs-meta .hljs-string {
+  /* prettylights-syntax-string */
+  color: #032f62
+}
+.hljs-built_in,
+.hljs-symbol {
+  /* prettylights-syntax-variable */
+  color: #e36209
+}
+.hljs-comment,
+.hljs-code,
+.hljs-formula {
+  /* prettylights-syntax-comment */
+  color: #6a737d
+}
+.hljs-name,
+.hljs-quote,
+.hljs-selector-tag,
+.hljs-selector-pseudo {
+  /* prettylights-syntax-entity-tag */
+  color: #22863a
+}
+.hljs-subst {
+  /* prettylights-syntax-storage-modifier-import */
+  color: #24292e
+}
+.hljs-section {
+  /* prettylights-syntax-markup-heading */
+  color: #005cc5;
+  font-weight: bold
+}
+.hljs-bullet {
+  /* prettylights-syntax-markup-list */
+  color: #735c0f
+}
+.hljs-emphasis {
+  /* prettylights-syntax-markup-italic */
+  color: #24292e;
+  font-style: italic
+}
+.hljs-strong {
+  /* prettylights-syntax-markup-bold */
+  color: #24292e;
+  font-weight: bold
+}
+.hljs-addition {
+  /* prettylights-syntax-markup-inserted */
+  color: #22863a;
+  background-color: #f0fff4
+}
+.hljs-deletion {
+  /* prettylights-syntax-markup-deleted */
+  color: #b31d28;
+  background-color: #ffeef0
+}
+.hljs-char.escape_,
+.hljs-link,
+.hljs-params,
+.hljs-property,
+.hljs-punctuation,
+.hljs-tag {
+  /* purposely ignored */
+  
+}/*# sourceURL=/opt/hostedtoolcache/node/18.19.1/x64/lib/node_modules/md-to-pdf/node_modules/highlight.js/styles/github.css*/</style></head>
+	<body class="">
+		<h1 id="début-du-projet-concessionnaire-automobile">Début du projet concessionnaire automobile</h1>
+<p>Pour ces exercices, nous allons réutiliser le code de l'exercice précédent, pour l'améliorer.</p>
+<pre><code class="hljs go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">"fmt"</span>
+    <span class="hljs-string">"time"</span>
+)
+
+<span class="hljs-comment">// Structure Car</span>
+<span class="hljs-keyword">type</span> Car <span class="hljs-keyword">struct</span> {
+    brand  <span class="hljs-type">string</span>
+    year   <span class="hljs-type">int</span>
+    color  <span class="hljs-type">string</span>
+    engine <span class="hljs-type">int</span>
+}
+
+<span class="hljs-comment">// Fonction receiver Equals pour la structure Car</span>
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(c Car)</span></span> Equals(other Car) <span class="hljs-type">bool</span> {
+    <span class="hljs-keyword">return</span> c.brand == other.brand &amp;&amp; c.year == other.year
+}
+
+<span class="hljs-comment">// Fonction receiver Age pour la structure Car</span>
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(c Car)</span></span> Age() <span class="hljs-type">int</span> {
+    <span class="hljs-keyword">return</span> time.Now().Year() - c.year
+}
+
+<span class="hljs-comment">// Fonction receiver UpdateYear pour la structure Car</span>
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(c *Car)</span></span> UpdateYear(newYear <span class="hljs-type">int</span>) *Car {
+    c.year = newYear
+    <span class="hljs-keyword">return</span> c
+}
+
+<span class="hljs-comment">// Fonction receiver UpdateColor pour la structure Car</span>
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(c *Car)</span></span> SetColor(newColor <span class="hljs-type">string</span>) *Car {
+    c.color = newColor
+    <span class="hljs-keyword">return</span> c
+}
+
+<span class="hljs-comment">// Fonction receiver UpgradeEngine pour la structure Car</span>
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(c *Car)</span></span> UpgradeEngine() *Car {
+    c.engine++
+    <span class="hljs-keyword">return</span> c
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+    myCar := Car{brand: <span class="hljs-string">"Toyota"</span>, year: <span class="hljs-number">2010</span>}
+    fmt.Printf(<span class="hljs-string">"La voiture a %d ans."</span>, myCar.Age())
+    myCar.UpdateYear(<span class="hljs-number">2009</span>)
+    fmt.Printf(<span class="hljs-string">"La voiture a %d ans."</span>, myCar.Age())
+
+    <span class="hljs-comment">// Comparaison de deux voitures</span>
+    myCar2 := Car{brand: <span class="hljs-string">"Toyota"</span>, year: <span class="hljs-number">2010</span>}
+    fmt.Println(myCar.Equals(myCar2))
+    myCar2.UpdateYear(<span class="hljs-number">2009</span>)
+    fmt.Println(myCar.Equals(myCar2))
+
+    <span class="hljs-comment">// Mise à jour chaînée</span>
+    myCar.UpdateYear(<span class="hljs-number">2021</span>).SetColor(<span class="hljs-string">"red"</span>).UpgradeEngine()
+    fmt.Println(myCar)
+}
+</code></pre>
+<h2 id="exercice-1--split-dans-des-packages-différents">Exercice 1 : Split dans des Packages Différents</h2>
+<blockquote>
+<p><strong>Objectif :</strong> Factorisez le code pour séparer les structures et les fonctions dans des packages distincts.</p>
+</blockquote>
+<p><strong>Instructions :</strong></p>
+<ul>
+<li>Créer un package <code>car</code> et y déplacer la structure <code>Car</code> et toutes ses méthodes.</li>
+<li>Enlevez les retours de type des méthodes <code>UpdateYear</code>, <code>SetColor</code> et <code>UpgradeEngine</code>.</li>
+<li>Ajouter une fonction <code>New(brand string, year int, color string, engine int) *Car</code> qui crée une nouvelle instance
+de <code>Car</code> et l'initialise avec les valeurs passées en paramètre.</li>
+<li>Créer un package <code>main</code> où vous appellerez les fonctions du package <code>car</code>.</li>
+<li>Assurer que le programme fonctionne comme avant après la factorisation.</li>
+</ul>
+<p><strong>Résultats attendus :</strong></p>
+<p>Un programme modulaire où la logique liée à Car est isolée dans son propre package.</p>
+<h2 id="exercice-2--gestion-derreur">Exercice 2 : Gestion d'Erreur</h2>
+<blockquote>
+<p><strong>Objectif :</strong> Ajouter de la gestion d'erreur dans les méthodes de Car.</p>
+</blockquote>
+<p><strong>Instructions :</strong></p>
+<ul>
+<li>Modifier la méthode <code>UpdateYear</code> pour qu'elle renvoie une erreur si l'année est dans le futur.</li>
+<li>Gérer l'erreur dans la fonction <code>main</code> et afficher un message approprié.</li>
+<li>Ajouter des validations similaires dans d'autres méthodes si nécessaire (par exemple, <code>SetColor</code> ne devrait pas
+accepter une chaîne vide).</li>
+</ul>
+<p><strong>Résultats attendus :</strong></p>
+<p>Un programme qui gère correctement les cas d'erreur.</p>
+<h2 id="exercice-3--ajouter-du-logging">Exercice 3 : Ajouter du Logging</h2>
+<blockquote>
+<p><strong>Objectif :</strong> Intégrer un système de logging pour suivre les opérations effectuées sur les instances de Car.</p>
+</blockquote>
+<p><strong>Instructions :</strong></p>
+<ul>
+<li>Ajouter du <strong>logging</strong> dans chaque méthode de <code>Car</code> pour indiquer quelle opération a été effectuée.</li>
+<li>Les <strong>logs</strong> doivent inclure des informations pertinentes comme l'état avant et après l'opération.</li>
+</ul>
+<p><strong>Résultats attendus :</strong></p>
+<p>Un programme qui affiche des logs détaillés des opérations effectuées.</p>
+<h2 id="exercice-4--projet-concessionnaire-automobile">Exercice 4 : Projet Concessionnaire Automobile</h2>
+<blockquote>
+<p><strong>Objectif :</strong> Transformer progressivement le code pour qu'il simule un système de gestion pour un concessionnaire
+automobile.</p>
+</blockquote>
+<h3 id="exercice-4a--ajout-de-voitures-au-concessionnaire">Exercice 4a : Ajout de Voitures au Concessionnaire</h3>
+<blockquote>
+<p><strong>Objectif</strong> : Créer une fonction pour ajouter des voitures à un inventaire.</p>
+</blockquote>
+<p><strong>Instructions :</strong></p>
+<ul>
+<li>Créer une structure <code>Dealership</code> qui contiendra un slice de <code>Car</code>.</li>
+<li>Ajouter une méthode <code>New() *Dealership</code> à <code>Dealership</code> qui crée une nouvelle instance de <code>Dealership</code> et l'initialise avec un
+slice vide.</li>
+<li>Ajouter une méthode <code>AddCar(car car.Car)</code> à <code>Dealership</code> pour ajouter une voiture à l'inventaire.</li>
+<li>Dans la fonction <code>main</code>, créer une instance de <code>Dealership</code> et ajouter quelques voitures.</li>
+</ul>
+<p><strong>Signature de la fonction :</strong></p>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(d *Dealership)</span></span> AddCar(car Car)
+</code></pre>
+<p><strong>Conseils :</strong></p>
+<p><code>Dealership</code> peut être défini dans un package différent de <code>Car</code>.</p>
+<p><strong>Résultats attendus :</strong></p>
+<p>Un programme capable d'ajouter des voitures à un inventaire de concessionnaire.</p>
+<h3 id="exercice-4b--suppression-de-voitures-de-linventaire">Exercice 4b : Suppression de Voitures de l'Inventaire</h3>
+<blockquote>
+<p><strong>Objectif :</strong> Créer une fonction pour supprimer des voitures de l'inventaire.</p>
+</blockquote>
+<p><strong>Instructions :</strong></p>
+<ul>
+<li>Ajouter une méthode <code>RemoveCar(index int) error</code> à <code>Dealership</code> pour supprimer une voiture à un index spécifié.</li>
+<li>Gérer les erreurs en cas d'index invalide.</li>
+<li>Tester la suppression dans la fonction <code>main</code>.</li>
+</ul>
+<p><strong>Signature de la fonction :</strong></p>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(d *Dealership)</span></span> RemoveCar(index <span class="hljs-type">int</span>) <span class="hljs-type">error</span>
+</code></pre>
+<p><strong>Résultats attendus :</strong></p>
+<p>Un programme capable de gérer la suppression de voitures de l'inventaire.</p>
+<h3 id="exercice-4c--recherche-de-voitures-par-marque-et-année">Exercice 4c : Recherche de Voitures par Marque et Année</h3>
+<blockquote>
+<p><strong>Objectif :</strong> Implémenter une fonctionnalité permettant de rechercher des voitures dans l'inventaire en fonction de
+leur marque et année de fabrication.</p>
+</blockquote>
+<p><strong>Instructions :</strong></p>
+<ul>
+<li>Dans la structure <code>Dealership</code>, ajoutez une méthode <code>FindCarsByCriteria(criteria map[string]string) []car.Car</code> pour
+rechercher des voitures dans l'inventaire.</li>
+<li>La méthode doit accepter un <code>map</code> de critères de recherche.<ul>
+<li>Chaque clé du <code>map</code> correspond à un critère de recherche (brand, year, color, engine).</li>
+</ul>
+</li>
+<li>La méthode doit parcourir l'inventaire et retourner un slice de <code>Car</code> qui correspond aux critères de recherche.</li>
+<li>Les critères de recherche peuvent être combinés (par exemple, rechercher des voitures de marque Toyota et de couleur
+rouge).</li>
+<li>Pour accéder aux propriétés de la voiture, vous pouvez utiliser les méthodes <code>GetBrand()</code>, <code>GetYear()</code>, <code>GetColor()</code>
+et <code>GetEngine()</code>, qu'il faudra ajouter à la structure <code>Car</code>.</li>
+<li>Assurez-vous de gérer le cas où aucune voiture ne correspond aux critères (retourner un slice vide).</li>
+<li>Testez cette fonctionnalité dans la fonction <code>main</code> en recherchant des voitures avec différents critères.</li>
+</ul>
+<p><strong>Signature de la fonction :</strong></p>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(d *Dealership)</span></span> FindCarsByCriteria(criteria <span class="hljs-keyword">map</span>[<span class="hljs-type">string</span>]<span class="hljs-type">string</span>) []car.Car
+</code></pre>
+<p><strong>Exemple d'utilisation :</strong></p>
+<pre><code class="hljs go">criteria := <span class="hljs-keyword">map</span>[<span class="hljs-type">string</span>]<span class="hljs-type">string</span>{
+    <span class="hljs-string">"brand"</span>: <span class="hljs-string">"Toyota"</span>,
+    <span class="hljs-string">"year"</span>: <span class="hljs-string">"2010"</span>,
+}
+
+cars := dealership.FindCarsByCriteria(criteria)
+</code></pre>
+<p><strong>Résultats attendus :</strong></p>
+<p>Un programme capable de rechercher et d'afficher des voitures de l'inventaire basé sur des critères de recherche.</p>
+<h3 id="exercice-4d--affichage-de-linventaire">Exercice 4d : Affichage de l'Inventaire</h3>
+<blockquote>
+<p><strong>Objectif :</strong> Créer une fonction pour afficher l'intégralité de l'inventaire du concessionnaire.</p>
+</blockquote>
+<p><strong>Instructions :</strong></p>
+<ul>
+<li>Ajouter une méthode <code>DisplayInventory()</code> à <code>Dealership</code> qui affiche toutes les voitures de l'inventaire.</li>
+<li>Assurer que l'affichage est clair et bien formaté.</li>
+<li>Tester l'affichage dans la fonction <code>main</code>.</li>
+</ul>
+<p><strong>Signature de la fonction :</strong></p>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(d *Dealership)</span></span> DisplayInventory()
+</code></pre>
+<p><strong>Résultats attendus :</strong></p>
+<p>Un programme capable d'afficher l'inventaire de voitures de façon claire et organisée.</p>
+
+	
+
+</body></html>
