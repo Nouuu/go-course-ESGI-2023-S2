@@ -1,0 +1,567 @@
+<!DOCTYPE html><html><head><title>Project - Planning Manager</title><meta charset="utf-8"><style>* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	line-height: 1.6;
+	font-size: 0.6875em; /* 11 pt */
+	color: #111;
+	margin: 0;
+}
+
+body > :first-child {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+body > :last-child {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0.5em 0 0.25em;
+}
+
+h5,
+h6 {
+	padding: 0;
+}
+
+h5 {
+	font-size: 1em;
+}
+
+h6 {
+	font-size: 0.875em;
+	text-transform: uppercase;
+}
+
+p {
+	margin: 0.25em 0 1em;
+}
+
+blockquote {
+	margin: 0.5em 0 1em;
+	padding-left: 0.5em;
+	padding-right: 1em;
+	border-left: 4px solid gainsboro;
+	font-style: italic;
+}
+
+ul,
+ol {
+	margin: 0;
+	margin-left: 1em;
+	padding: 0 1.5em 0.5em;
+}
+
+pre {
+	white-space: pre-wrap;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code,
+p code,
+li code,
+pre code {
+	background-color: #f8f8f8;
+	padding: 0.1em 0.375em;
+	border: 1px solid #f8f8f8;
+	border-radius: 0.25em;
+	font-family: monospace;
+	font-size: 1.2em;
+}
+
+pre code {
+	display: block;
+	padding: 0.5em;
+}
+
+.page-break {
+	page-break-after: always;
+}
+
+img {
+	max-width: 100%;
+	margin: 1em 0;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	display: block;
+	margin: 0 0 1em;
+	width: 100%;
+	overflow: auto;
+}
+
+table th,
+table td {
+	padding: 0.5em 1em;
+	border: 1px solid gainsboro;
+}
+
+table th {
+	font-weight: 600;
+}
+
+table tr {
+	background-color: white;
+	border-top: 1px solid gainsboro;
+}
+
+table tr:nth-child(2n) {
+	background-color: whitesmoke;
+}
+/*# sourceURL=/opt/hostedtoolcache/node/18.19.1/x64/lib/node_modules/md-to-pdf/markdown.css*/</style><style>pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em
+}
+code.hljs {
+  padding: 3px 5px
+}
+/*!
+  Theme: GitHub
+  Description: Light theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-light
+  Current colors taken from GitHub's CSS
+*/
+.hljs {
+  color: #24292e;
+  background: #ffffff
+}
+.hljs-doctag,
+.hljs-keyword,
+.hljs-meta .hljs-keyword,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-variable.language_ {
+  /* prettylights-syntax-keyword */
+  color: #d73a49
+}
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.class_.inherited__,
+.hljs-title.function_ {
+  /* prettylights-syntax-entity */
+  color: #6f42c1
+}
+.hljs-attr,
+.hljs-attribute,
+.hljs-literal,
+.hljs-meta,
+.hljs-number,
+.hljs-operator,
+.hljs-variable,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-id {
+  /* prettylights-syntax-constant */
+  color: #005cc5
+}
+.hljs-regexp,
+.hljs-string,
+.hljs-meta .hljs-string {
+  /* prettylights-syntax-string */
+  color: #032f62
+}
+.hljs-built_in,
+.hljs-symbol {
+  /* prettylights-syntax-variable */
+  color: #e36209
+}
+.hljs-comment,
+.hljs-code,
+.hljs-formula {
+  /* prettylights-syntax-comment */
+  color: #6a737d
+}
+.hljs-name,
+.hljs-quote,
+.hljs-selector-tag,
+.hljs-selector-pseudo {
+  /* prettylights-syntax-entity-tag */
+  color: #22863a
+}
+.hljs-subst {
+  /* prettylights-syntax-storage-modifier-import */
+  color: #24292e
+}
+.hljs-section {
+  /* prettylights-syntax-markup-heading */
+  color: #005cc5;
+  font-weight: bold
+}
+.hljs-bullet {
+  /* prettylights-syntax-markup-list */
+  color: #735c0f
+}
+.hljs-emphasis {
+  /* prettylights-syntax-markup-italic */
+  color: #24292e;
+  font-style: italic
+}
+.hljs-strong {
+  /* prettylights-syntax-markup-bold */
+  color: #24292e;
+  font-weight: bold
+}
+.hljs-addition {
+  /* prettylights-syntax-markup-inserted */
+  color: #22863a;
+  background-color: #f0fff4
+}
+.hljs-deletion {
+  /* prettylights-syntax-markup-deleted */
+  color: #b31d28;
+  background-color: #ffeef0
+}
+.hljs-char.escape_,
+.hljs-link,
+.hljs-params,
+.hljs-property,
+.hljs-punctuation,
+.hljs-tag {
+  /* purposely ignored */
+  
+}/*# sourceURL=/opt/hostedtoolcache/node/18.19.1/x64/lib/node_modules/md-to-pdf/node_modules/highlight.js/styles/github.css*/</style></head>
+	<body class="">
+		<h1 id="projet-de-groupe-en-go-">Projet de Groupe en Go :</h1>
+<h1 id="service-de-réservation-en-ligne">Service de réservation en ligne</h1>
+<br>
+
+<!-- toc -->
+
+<ul>
+<li><a href="#objectif">Objectif</a></li>
+<li><a href="#format-du-projet">Format du Projet</a></li>
+<li><a href="#description-detaillee-et-etapes-du-projet">Description détaillée et étapes du projet</a><ul>
+<li><a href="#interface-utilisateur-en-cli">Interface Utilisateur en CLI</a><ul>
+<li><a href="#menu-principal">Menu principal</a></li>
+<li><a href="#interaction-avec-lutilisateur">Interaction avec l'utilisateur</a></li>
+<li><a href="#navigation">Navigation</a></li>
+<li><a href="#fonctionnalites-du-menu">Fonctionnalités du menu</a></li>
+</ul>
+</li>
+<li><a href="#gestion-des-reservations">Gestion des réservations</a><ul>
+<li><a href="#structures-de-donnees">Structures de données</a></li>
+<li><a href="#lister-les-salles-disponibles">Lister les salles disponibles</a></li>
+<li><a href="#creer-une-reservation">Créer une réservation</a></li>
+<li><a href="#annuler-une-reservation">Annuler une réservation</a></li>
+<li><a href="#visualiser-les-reservations">Visualiser les réservations</a></li>
+</ul>
+</li>
+<li><a href="#base-de-donnees">Base de Données</a><ul>
+<li><a href="#structure-de-la-base-de-donnees">Structure de la Base de Données</a></li>
+<li><a href="#operations-de-base-de-donnees">Opérations de Base de Données</a></li>
+<li><a href="#persistance-et-configuration-des-identifiants">Persistance et configuration des identifiants</a></li>
+</ul>
+</li>
+<li><a href="#export-des-reservations">Export des réservations</a><ul>
+<li><a href="#export-json">Export JSON</a></li>
+<li><a href="#export-csv-bonus">Export CSV (Bonus)</a></li>
+</ul>
+</li>
+<li><a href="#interface-web">Interface Web</a><ul>
+<li><a href="#mise-en-place-dun-serveur-web">Mise en place d'un Serveur Web</a></li>
+<li><a href="#creation-des-handlers">Création des handlers</a></li>
+<li><a href="#template-html">Template HTML</a></li>
+</ul>
+</li>
+<li><a href="#bonus">Bonus</a><ul>
+<li><a href="#fonctionnalites-supplementaires-ou-creatives-au-dela-des-exigences-de-base">Fonctionnalités supplémentaires ou créatives au-delà des exigences de base.</a></li>
+</ul>
+</li>
+<li><a href="#suggestions-de-conception">Suggestions de conception</a><ul>
+<li><a href="#bonnes-pratiques-en-go">Bonnes Pratiques en Go</a></li>
+<li><a href="#modularite-et-structure-du-code">Modularité et Structure du Code</a></li>
+<li><a href="#librairies-standard-utiles">Librairies Standard Utiles</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#recapitulatif">Récapitulatif</a><ul>
+<li><a href="#recapitulatif-des-etapes-cles">Récapitulatif des Étapes Clés</a></li>
+</ul>
+</li>
+<li><a href="#rendu-et-travail-en-groupe">Rendu et Travail en Groupe</a></li>
+</ul>
+<!-- tocstop -->
+
+<h2 id="objectif">Objectif</h2>
+<p>Développer un système de réservation de salles de classe en Go, en commençant avec une interface en ligne de commande
+pour gérer les réservations, les salles et les utilisateurs. La partie avancée introduira une interface web pour
+faciliter l'accès et l'interaction avec le système.</p>
+<h2 id="format-du-projet">Format du Projet</h2>
+<ul>
+<li>Groupe de 2 à 3 étudiants.</li>
+<li>Durée : 1 mois.</li>
+</ul>
+<div class="page-break"></div>
+
+<h2 id="description-détaillée-et-étapes-du-projet">Description détaillée et étapes du projet</h2>
+<h3 id="interface-utilisateur-en-cli">Interface Utilisateur en CLI</h3>
+<h4 id="menu-principal">Menu principal</h4>
+<ul>
+<li>Créez un menu principal en CLI qui offre des options pour chaque fonctionnalité principale du système de réservation.</li>
+<li><strong>Exemple de menu</strong> :</li>
+</ul>
+<pre><code class="hljs markdown"><span class="hljs-section">Bienvenue dans le Service de Réservation en Ligne
+-----------------------------------------------------</span>
+
+<span class="hljs-bullet">1.</span> Lister les salles disponibles
+<span class="hljs-bullet">2.</span> Créer une réservation
+<span class="hljs-bullet">3.</span> Annuler une réservation
+<span class="hljs-bullet">4.</span> Visualiser les réservations
+<span class="hljs-bullet">5.</span> Quitter
+   
+Choisissez une option :
+</code></pre>
+<h4 id="interaction-avec-lutilisateur">Interaction avec l'utilisateur</h4>
+<ul>
+<li>Implémentez la gestion des entrées utilisateur pour permettre la navigation et l'exécution des actions dans le menu.</li>
+<li>Assurez-vous que le système gère les entrées invalides et guide l'utilisateur vers des choix corrects.</li>
+<li><strong>Exemple de gestion des entrées</strong> :</li>
+<li>Si l'utilisateur saisit un chiffre non valide, affichez un message d'erreur et demandez de nouveau une entrée.</li>
+<li>Utilisez des boucles et des conditions pour gérer la navigation entre les menus.</li>
+</ul>
+<h4 id="navigation">Navigation</h4>
+<ul>
+<li>Permettez à l'utilisateur de naviguer facilement entre les différentes fonctionnalités. Par exemple, après avoir
+visualisé ou réservé une salle, l'utilisateur doit pouvoir retourner au menu principal ou effectuer une autre action
+sans redémarrer le programme.</li>
+<li><strong>Exemple de navigation</strong> :</li>
+<li>Après l'affichage d'une réservation :</li>
+</ul>
+<pre><code class="hljs markdown"><span class="hljs-bullet">1.</span> Retourner au menu principal
+<span class="hljs-bullet">2.</span> Quitter
+
+Choisissez une option :
+</code></pre>
+<h4 id="fonctionnalités-du-menu">Fonctionnalités du menu</h4>
+<ul>
+<li><strong>Lister les salles disponibles</strong> : Créez une fonction qui affiche les salles qui ne sont pas réservées pour une plage
+horaire spécifique.</li>
+<li><strong>Créer une réservation</strong> : Demandez à l'utilisateur de fournir les détails nécessaires pour une réservation (nom de
+la salle, date, heure) et vérifiez si la salle est disponible avant de créer la réservation.</li>
+<li><strong>Annuler une réservation</strong> : Demandez à l'utilisateur de fournir les détails nécessaires pour annuler une réservation
+(nom de la salle, date, heure) et vérifiez si la réservation existe avant de l'annuler.</li>
+<li><strong>Visualiser les réservations</strong> : Affichez les réservations existantes pour une salle spécifique, permettez de filtrer
+pour une date spécifique.</li>
+</ul>
+<div class="page-break"></div>
+
+<h3 id="gestion-des-réservations">Gestion des réservations</h3>
+<h4 id="structures-de-données">Structures de données</h4>
+<ul>
+<li>Définissez une structure <code>Room</code> qui représente une salle de classe, incluant des attributs comme l'identifiant de la
+salle, le nom, et la capacité.</li>
+<li>Créez une structure <code>Reservation</code> qui contient les informations d'une réservation, comme l'identifiant de la
+réservation, l'identifiant de la salle, la date et l'heure.</li>
+</ul>
+<h4 id="lister-les-salles-disponibles">Lister les salles disponibles</h4>
+<ul>
+<li>Créez une fonction qui prend en entrée une date et une heure, et retourne une liste des salles disponibles pour cette
+plage horaire.<br>Une salle est <strong>disponible</strong> si elle n'a pas de réservation pour la date et l'heure demandées.</li>
+<li>Utilisez des boucles et des conditions pour filtrer les salles réservées.</li>
+<li><strong>Exemple de liste de salles</strong> :</li>
+</ul>
+<pre><code class="hljs markdown">Salles disponibles pour le 2023-04-01 à 14:00 :
+
+<span class="hljs-bullet">1.</span> Salle 1 (Capacité : 30)
+<span class="hljs-bullet">2.</span> Salle 2 (Capacité : 40)
+<span class="hljs-bullet">3.</span> Salle 3 (Capacité : 50)
+</code></pre>
+<h4 id="créer-une-réservation">Créer une réservation</h4>
+<p>La fonction <code>CreateReservation</code> sera responsable de créer une nouvelle réservation. Voici les étapes détaillées :</p>
+<ul>
+<li><strong>Entrée Utilisateur</strong> : Demandez à l'utilisateur de fournir les informations nécessaires pour une réservation,
+telles que l'ID de la salle, la date et l'heure de début et de fin.</li>
+<li><strong>Vérification de la Disponibilité</strong> : Avant de créer la réservation, vérifiez si la salle est disponible en
+utilisant une fonction (ex : <code>IsRoomAvailable</code>). Cette fonction parcourt toutes les réservations existantes pour la salle
+en question et vérifie s'il y a un chevauchement avec la nouvelle réservation demandée.</li>
+<li><strong>Création de la Réservation</strong> : Si la salle est disponible, créez une nouvelle instance de <code>Reservation</code> et
+attribuez-lui les détails fournis. Ajoutez ensuite cette réservation à la base de données.</li>
+<li><strong>Retour Utilisateur</strong> : Affichez un message de confirmation à l'utilisateur.</li>
+</ul>
+<h4 id="annuler-une-réservation">Annuler une réservation</h4>
+<p>La fonction <code>CancelReservation</code> permet à l'utilisateur d'annuler une réservation existante :</p>
+<ul>
+<li><strong>Identifiant de la Réservation</strong> : Demandez à l'utilisateur de fournir l'identifiant de la réservation à annuler.</li>
+<li><strong>Recherche de la Réservation</strong> : Recherchez dans la base de données des réservations pour trouver la réservation
+correspondant à l'identifiant fourni.</li>
+<li><strong>Annulation</strong> : Si la réservation est trouvée, retirez-la de la base de données. Informez l'utilisateur que la
+réservation a été annulée avec succès. Si la réservation n'est pas trouvée, informez l'utilisateur.</li>
+</ul>
+<h4 id="visualiser-les-réservations">Visualiser les réservations</h4>
+<p>La fonction <code>ListReservations</code> affiche les réservations :</p>
+<ul>
+<li><strong>Affichage</strong> : Parcourez la base de données des réservations et affichez les détails pour chaque réservation. Vous
+pouvez offrir des options pour filtrer les réservations par salle ou par date.</li>
+<li><strong>Exemple de liste de réservations</strong> :</li>
+</ul>
+<pre><code class="hljs markdown">Réservations pour la Salle 1 :
+
+<span class="hljs-bullet">1.</span> 2023-04-01 14:00 - 2023-04-01 15:00
+<span class="hljs-bullet">2.</span> 2023-04-02 10:00 - 2023-04-02 11:00
+</code></pre>
+<div class="page-break"></div>
+
+<h3 id="base-de-données">Base de Données</h3>
+<h4 id="structure-de-la-base-de-données">Structure de la Base de Données</h4>
+<ul>
+<li>Utilisez une base de données pour stocker les salles et les réservations.</li>
+<li>Vous devez y stocker les informations sur les salles et les réservations, et implémenter des fonctions pour ajouter,
+supprimer et récupérer des données de la base de données.</li>
+</ul>
+<h4 id="opérations-de-base-de-données">Opérations de Base de Données</h4>
+<ul>
+<li><strong>Ajouter une Salle</strong> : Créez une fonction pour ajouter une nouvelle salle à la base de données. Veillez à ce que son
+ID soit unique (auto-incrémenté).<ul>
+<li>Cette fonction vous aidera à ajouter de nouvelles salles à la base de données.</li>
+</ul>
+</li>
+<li><strong>Ajouter une Réservation</strong> : Créez une fonction pour ajouter une nouvelle réservation à la base de données. Veillez à
+ce que son ID soit unique (auto-incrémenté).</li>
+<li><strong>Supprimer une Réservation</strong> : Créez une fonction pour supprimer une réservation de la base de données.</li>
+<li><strong>Récupérer les Salles</strong> : Créez une fonction pour récupérer toutes les salles de la base de données.</li>
+<li><strong>Récupérer les Réservations</strong> : Créez une fonction pour récupérer toutes les réservations de la base de données.</li>
+<li><strong>Récupérer les Réservations par Salle</strong> : Créez une fonction pour récupérer toutes les réservations pour une salle
+spécifique.</li>
+<li><strong>Récupérer les Réservations par Date</strong> : Créez une fonction pour récupérer toutes les réservations pour une date
+spécifique.</li>
+<li><strong>Vérifier la Disponibilité</strong> : Créez une fonction pour vérifier si une salle est disponible pour une plage horaire
+spécifique.</li>
+</ul>
+<h4 id="persistance-et-configuration-des-identifiants">Persistance et configuration des identifiants</h4>
+<ul>
+<li><strong>Chargement des Identifiants</strong> : Les identifiants de la base de données doivent être chargés depuis un fichier de
+configuration externe pour permettre des modifications dynamiques sans recompilation.</li>
+<li><strong>Fichier d'Initialisation de la Base de Données</strong> : Créez un script ou un fichier d'initialisation pour préparer la
+base de données à son premier usage.</li>
+</ul>
+<h3 id="export-des-réservations">Export des réservations</h3>
+<h4 id="export-json">Export JSON</h4>
+<ul>
+<li>Créez une fonction pour exporter les réservations dans un fichier JSON.</li>
+<li>Assurez-vous que l'export JSON reflète fidèlement la structure et l'état actuel de la base de données.</li>
+</ul>
+<h4 id="export-csv-bonus">Export CSV (Bonus)</h4>
+<ul>
+<li>En tant que fonctionnalité bonus, ajoutez une option pour exporter les données en format CSV, utile pour l'analyse de
+données ou la migration.</li>
+</ul>
+<div class="page-break"></div>
+
+<h3 id="interface-web">Interface Web</h3>
+<p>Vous pouvez choisir d'implémenter une interface web pour faciliter l'accès et l'interaction avec le système de
+réservation.</p>
+<h4 id="mise-en-place-dun-serveur-web">Mise en place d'un Serveur Web</h4>
+<ul>
+<li>Initialisez votre serveur web en Go en utilisant <code>http.ListenAndServe</code>.</li>
+<li>Définissez des routes pour gérer les requêtes HTTP pour les différentes fonctionnalités du système de réservation.</li>
+</ul>
+<h4 id="création-des-handlers">Création des handlers</h4>
+<ul>
+<li>Pour chaque routes définies, créez des handlers pour gérer les requêtes HTTP.</li>
+<li>Les handlers devraient appeler les fonctions appropriées pour gérer les opérations de réservation.<ul>
+<li>Si vous avez bien codé les fonctions de réservation de la CLI, vous pouvez les réutiliser pour gérer les requêtes
+HTTP.</li>
+</ul>
+</li>
+</ul>
+<h4 id="template-html">Template HTML</h4>
+<ul>
+<li>Créez des templates HTML pour afficher les différentes pages de l'interface web.</li>
+<li>Utilisez le système de templating de Go pour intégrer dynamiquement les données dans vos pages HTML.</li>
+</ul>
+<h3 id="bonus">Bonus</h3>
+<blockquote>
+<h4 id="fonctionnalités-supplémentaires-ou-créatives-au-delà-des-exigences-de-base">Fonctionnalités supplémentaires ou créatives au-delà des exigences de base.</h4>
+</blockquote>
+<h3 id="suggestions-de-conception">Suggestions de conception</h3>
+<h4 id="bonnes-pratiques-en-go">Bonnes Pratiques en Go</h4>
+<ul>
+<li><strong>Clarté et Simplicité</strong> : Écrivez un code clair et lisible. Go privilégie la simplicité ; évitez les constructions
+compliquées inutiles.</li>
+<li><strong>Nommage des Variables et Fonctions</strong> : Utilisez des noms descriptifs et cohérents pour les variables, fonctions et
+autres identifiants.</li>
+<li><strong>Commentaires et Documentation</strong> : Documentez votre code avec des commentaires pertinents. Expliquez le 'pourquoi'
+derrière les choix de conception complexes.</li>
+</ul>
+<h4 id="modularité-et-structure-du-code">Modularité et Structure du Code</h4>
+<ul>
+<li><strong>Découpage en Packages</strong> : Organisez votre code en packages logiques. Par exemple, un package pour la gestion de la
+base de données, un autre pour l'interface utilisateur, etc.</li>
+<li><strong>Fonctions Réutilisables</strong> : Créez des fonctions qui accomplissent des tâches spécifiques et peuvent être réutilisées
+dans différents contextes du projet.</li>
+</ul>
+<h4 id="librairies-standard-utiles">Librairies Standard Utiles</h4>
+<ul>
+<li><strong>fmt pour l'Affichage et la Saisie</strong> : Utilisez la librairie <code>fmt</code> pour afficher des informations à l'utilisateur et
+lire les saisies.</li>
+<li><strong>Gestion du Temps avec time</strong> : La librairie <code>time</code> est essentielle pour manipuler les dates et les heures,
+notamment pour la création et le rappel des événements.</li>
+<li><strong>Manipulation de Fichiers avec os et io</strong> : Pour la lecture et l'écriture des fichiers de configuration, de
+sauvegarde JSON, et d'export CSV.</li>
+<li><strong>Encodage JSON avec encoding/json</strong> : Utilisez <code>encoding/json</code> pour convertir les données de la base de données en
+JSON et vice-versa.</li>
+<li><strong>Serveur Web avec net/http</strong> : La librairie <code>net/http</code> est utilisée pour créer un serveur web en Go.</li>
+</ul>
+<div class="page-break"></div>
+
+<h2 id="récapitulatif">Récapitulatif</h2>
+<p>Vous avez désormais un aperçu complet du projet de création d'un système de réservation en ligne. Ce projet
+vous offre l'opportunité de mettre en pratique les compétences acquises en programmation Go, tout en relevant des défis
+réalistes liés à la gestion de données, à l'interface utilisateur, et à la conception de logiciels.</p>
+<h3 id="récapitulatif-des-étapes-clés">Récapitulatif des Étapes Clés</h3>
+<ol>
+<li><strong>Interface Utilisateur en CLI</strong> : Créez un menu interactif pour gérer les réservations, les salles et les
+utilisateurs.</li>
+<li><strong>Gestion des Réservations</strong> : Implémentez les fonctions pour créer, annuler et visualiser les réservations.</li>
+<li><strong>Base de Données</strong> : Utilisez une base de données pour stocker les salles et les réservations, et implémentez des
+fonctions pour ajouter, supprimer et récupérer des données.</li>
+<li><strong>Export des Réservations</strong> : Ajoutez des fonctionnalités pour exporter les réservations en JSON et CSV.</li>
+<li><strong>Interface Web</strong> : Implémentez une interface web pour faciliter l'accès et l'interaction avec le système de
+réservation.</li>
+</ol>
+<h2 id="rendu-et-travail-en-groupe">Rendu et Travail en Groupe</h2>
+<ul>
+<li>Code source complet et commenté.</li>
+<li>Fichier <strong>README</strong> avec instructions, description des fonctionnalités et répartition des tâches.</li>
+<li>Documentation technique décrivant la structure du code, les choix de conception, et la logique.</li>
+</ul>
+<blockquote>
+<p>Assurez-vous que le code est bien organisé, documenté, et testé, avant la soumission finale.</p>
+</blockquote>
+<blockquote>
+<p>Préparez une présentation détaillée du projet pour la soutenance, en mettant en avant les fonctionnalités
+implémentées, la collaboration au sein du groupe et les contributions individuelles.</p>
+</blockquote>
+
+	
+
+</body></html>

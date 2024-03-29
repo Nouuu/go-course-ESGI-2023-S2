@@ -1,0 +1,489 @@
+<!DOCTYPE html><html><head><title>TP - Tic Tac Toe</title><meta charset="utf-8"><style>* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	line-height: 1.6;
+	font-size: 0.6875em; /* 11 pt */
+	color: #111;
+	margin: 0;
+}
+
+body > :first-child {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+body > :last-child {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0.5em 0 0.25em;
+}
+
+h5,
+h6 {
+	padding: 0;
+}
+
+h5 {
+	font-size: 1em;
+}
+
+h6 {
+	font-size: 0.875em;
+	text-transform: uppercase;
+}
+
+p {
+	margin: 0.25em 0 1em;
+}
+
+blockquote {
+	margin: 0.5em 0 1em;
+	padding-left: 0.5em;
+	padding-right: 1em;
+	border-left: 4px solid gainsboro;
+	font-style: italic;
+}
+
+ul,
+ol {
+	margin: 0;
+	margin-left: 1em;
+	padding: 0 1.5em 0.5em;
+}
+
+pre {
+	white-space: pre-wrap;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code,
+p code,
+li code,
+pre code {
+	background-color: #f8f8f8;
+	padding: 0.1em 0.375em;
+	border: 1px solid #f8f8f8;
+	border-radius: 0.25em;
+	font-family: monospace;
+	font-size: 1.2em;
+}
+
+pre code {
+	display: block;
+	padding: 0.5em;
+}
+
+.page-break {
+	page-break-after: always;
+}
+
+img {
+	max-width: 100%;
+	margin: 1em 0;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	display: block;
+	margin: 0 0 1em;
+	width: 100%;
+	overflow: auto;
+}
+
+table th,
+table td {
+	padding: 0.5em 1em;
+	border: 1px solid gainsboro;
+}
+
+table th {
+	font-weight: 600;
+}
+
+table tr {
+	background-color: white;
+	border-top: 1px solid gainsboro;
+}
+
+table tr:nth-child(2n) {
+	background-color: whitesmoke;
+}
+/*# sourceURL=/opt/hostedtoolcache/node/18.19.1/x64/lib/node_modules/md-to-pdf/markdown.css*/</style><style>pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em
+}
+code.hljs {
+  padding: 3px 5px
+}
+/*!
+  Theme: GitHub
+  Description: Light theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-light
+  Current colors taken from GitHub's CSS
+*/
+.hljs {
+  color: #24292e;
+  background: #ffffff
+}
+.hljs-doctag,
+.hljs-keyword,
+.hljs-meta .hljs-keyword,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-variable.language_ {
+  /* prettylights-syntax-keyword */
+  color: #d73a49
+}
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.class_.inherited__,
+.hljs-title.function_ {
+  /* prettylights-syntax-entity */
+  color: #6f42c1
+}
+.hljs-attr,
+.hljs-attribute,
+.hljs-literal,
+.hljs-meta,
+.hljs-number,
+.hljs-operator,
+.hljs-variable,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-id {
+  /* prettylights-syntax-constant */
+  color: #005cc5
+}
+.hljs-regexp,
+.hljs-string,
+.hljs-meta .hljs-string {
+  /* prettylights-syntax-string */
+  color: #032f62
+}
+.hljs-built_in,
+.hljs-symbol {
+  /* prettylights-syntax-variable */
+  color: #e36209
+}
+.hljs-comment,
+.hljs-code,
+.hljs-formula {
+  /* prettylights-syntax-comment */
+  color: #6a737d
+}
+.hljs-name,
+.hljs-quote,
+.hljs-selector-tag,
+.hljs-selector-pseudo {
+  /* prettylights-syntax-entity-tag */
+  color: #22863a
+}
+.hljs-subst {
+  /* prettylights-syntax-storage-modifier-import */
+  color: #24292e
+}
+.hljs-section {
+  /* prettylights-syntax-markup-heading */
+  color: #005cc5;
+  font-weight: bold
+}
+.hljs-bullet {
+  /* prettylights-syntax-markup-list */
+  color: #735c0f
+}
+.hljs-emphasis {
+  /* prettylights-syntax-markup-italic */
+  color: #24292e;
+  font-style: italic
+}
+.hljs-strong {
+  /* prettylights-syntax-markup-bold */
+  color: #24292e;
+  font-weight: bold
+}
+.hljs-addition {
+  /* prettylights-syntax-markup-inserted */
+  color: #22863a;
+  background-color: #f0fff4
+}
+.hljs-deletion {
+  /* prettylights-syntax-markup-deleted */
+  color: #b31d28;
+  background-color: #ffeef0
+}
+.hljs-char.escape_,
+.hljs-link,
+.hljs-params,
+.hljs-property,
+.hljs-punctuation,
+.hljs-tag {
+  /* purposely ignored */
+  
+}/*# sourceURL=/opt/hostedtoolcache/node/18.19.1/x64/lib/node_modules/md-to-pdf/node_modules/highlight.js/styles/github.css*/</style></head>
+	<body class="">
+		<h1 id="travaux-pratiques--jeu-de-puissance-4-en-go">Travaux Pratiques : Jeu de Puissance 4 en Go</h1>
+<!-- toc -->
+
+<ul>
+<li><a href="#objectif">Objectif</a></li>
+<li><a href="#points-totals--20-points--2-bonus">Points Totals : 20 Points (+ 2 Bonus)</a></li>
+<li><a href="#instructions-generales">Instructions Générales</a></li>
+<li><a href="#partie-1--logique-de-base-du-jeu-10-points">Partie 1 : Logique de Base du Jeu (10 Points)</a><ul>
+<li><a href="#boucle-de-jeu">Boucle de Jeu</a></li>
+<li><a href="#fonction-printboard">Fonction <code>printBoard</code></a></li>
+<li><a href="#fonction-gameisover">Fonction <code>gameIsOver</code></a></li>
+<li><a href="#fonction-switchplayer">Fonction <code>switchPlayer</code></a></li>
+</ul>
+</li>
+<li><a href="#partie-2--lecture-et-ecriture-de-fichier-3-points">Partie 2 : Lecture et Écriture de Fichier (3 Points)</a><ul>
+<li><a href="#fonction-savegame">Fonction <code>saveGame</code></a></li>
+<li><a href="#fonction-loadgame">Fonction <code>loadGame</code></a></li>
+</ul>
+</li>
+<li><a href="#partie-3--interface-utilisateur-2-points">Partie 3 : Interface Utilisateur (2 Points)</a></li>
+<li><a href="#partie-4--qualite-du-code-et-commentaires-5-points">Partie 4 : Qualité du Code et Commentaires (5 Points)</a></li>
+<li><a href="#partie-5--fonctionnalites-bonus-2-points">Partie 5 : Fonctionnalités Bonus (2 Points)</a></li>
+<li><a href="#criteres-devaluation">Critères d'Évaluation</a></li>
+</ul>
+<!-- tocstop -->
+
+<h2 id="objectif">Objectif</h2>
+<p>Développer une version console du jeu Puissance 4 en Go, où les joueurs insèrent alternativement des jetons dans une
+grille verticale, cherchant à aligner quatre jetons de leur couleur.</p>
+<h2 id="points-totals--20-points--2-bonus">Points Totals : 20 Points (+ 2 Bonus)</h2>
+<h2 id="instructions-générales">Instructions Générales</h2>
+<ul>
+<li>Utilisez uniquement la librairie standard de Go.</li>
+<li>Suivez les bonnes pratiques de programmation en Go.</li>
+<li>Commentez votre code de manière à expliquer les choix de conception et les fonctionnalités implémentées.</li>
+</ul>
+<div class="page-break"></div>
+
+<h2 id="partie-1--logique-de-base-du-jeu-10-points">Partie 1 : Logique de Base du Jeu (10 Points)</h2>
+<p><strong>Objectif</strong> :</p>
+<p>Créer la grille de jeu et gérer l'alternance des joueurs, en vérifiant les conditions de victoire pour un alignement de
+quatre jetons.</p>
+<ul>
+<li>Les joueurs insèrent alternativement des jetons dans une colonne de la grille.</li>
+<li>Le jeu s'arrête lorsqu'un joueur a aligné quatre jetons horizontalement, verticalement ou en diagonale, ou lorsque la
+grille est pleine.</li>
+<li>Le jeu doit afficher l'état actuel de la grille à chaque tour.</li>
+<li>Une grille de puissance 4 standard est de taille 6 lignes x 7 colonnes.</li>
+</ul>
+<p><strong>Exemple de squelette de Code</strong> :</p>
+<pre><code class="hljs go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">"fmt"</span>
+
+<span class="hljs-keyword">type</span> Player <span class="hljs-type">int</span>
+
+<span class="hljs-keyword">const</span> (
+    Empty  Player = <span class="hljs-literal">iota</span>  <span class="hljs-comment">// 0</span>
+    Player1               <span class="hljs-comment">// 1</span>
+    Player2               <span class="hljs-comment">// 2</span>
+)
+
+<span class="hljs-keyword">type</span> Board [<span class="hljs-number">6</span>][<span class="hljs-number">7</span>]Player
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+    <span class="hljs-keyword">var</span> board Board
+    <span class="hljs-keyword">var</span> currentPlayer Player = Player1
+
+    <span class="hljs-keyword">for</span> {
+        fmt.Println(<span class="hljs-string">"État actuel du plateau :"</span>)
+        printBoard(board)
+
+        <span class="hljs-keyword">if</span> gameIsOver(board) {
+            <span class="hljs-keyword">break</span>
+        }
+        currentPlayer = switchPlayer(currentPlayer)
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">printBoard</span><span class="hljs-params">(b Board)</span></span> {
+    <span class="hljs-comment">// Afficher le plateau ici</span>
+}
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">switchPlayer</span><span class="hljs-params">(current Player)</span></span> Player {
+    <span class="hljs-comment">// Changer de joueur</span>
+}
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">gameIsOver</span><span class="hljs-params">(b Board)</span></span> <span class="hljs-type">bool</span> {
+    <span class="hljs-comment">// Vérifier la condition de victoire</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+}
+</code></pre>
+<div class="page-break"></div>
+
+<h3 id="boucle-de-jeu">Boucle de Jeu</h3>
+<ul>
+<li>La boucle principale du jeu doit alterner entre les joueurs, en demandant à chaque joueur de choisir une colonne où
+insérer son jeton.</li>
+<li>La boucle doit s'arrêter dès qu'un joueur a gagné ou que la grille est pleine.<ul>
+<li>La fonction <code>gameIsOver</code> doit retourner <code>true</code> si un joueur a gagné ou si la grille est pleine.</li>
+<li>La fonction <code>switchPlayer</code> doit retourner l'autre joueur.</li>
+<li>La fonction <code>printBoard</code> doit afficher la grille de jeu.</li>
+</ul>
+</li>
+<li>Les joueurs doivent insérer leur jeton dans une colonne de la grille, en vérifiant que la colonne n'est pas déjà
+pleine.<ul>
+<li>Vous devez donc demander à chaque joueur de choisir une colonne valide, et insérer son jeton dans la première case
+vide de cette colonne.</li>
+<li>Vous pouvez utiliser la fonction <code>fmt.Scan</code> pour demander à l'utilisateur de saisir un nombre, et vérifier que la
+colonne est valide.</li>
+<li>Vous pouvez utiliser une boucle <code>for</code> pour demander à l'utilisateur de saisir une colonne tant que la saisie n'est
+pas valide.</li>
+<li>Vous pouvez utiliser une boucle <code>for</code> pour chercher la première case vide dans une colonne, et insérer le jeton du
+joueur à cet emplacement.</li>
+</ul>
+</li>
+</ul>
+<h3 id="fonction-printboard">Fonction <code>printBoard</code></h3>
+<ul>
+<li>La fonction <code>printBoard</code> doit afficher la grille de jeu, en utilisant des caractères différents pour les jetons des
+  deux joueurs et pour les cases vides.</li>
+<li>Par exemple, vous pouvez utiliser les caractères <code>X</code>, <code>O</code> et <code>.</code> pour représenter les jetons des deux joueurs et les
+  cases vides.</li>
+<li>La grille peut être affichée avec des lignes et des colonnes numérotées pour faciliter la saisie des coups.</li>
+<li>Vous pouvez utiliser la fonction <code>fmt.Printf</code> pour afficher la grille de manière plus lisible.</li>
+</ul>
+<p><strong>Exemple d'affichage de la grille :</strong></p>
+<pre><code>| 0 | 1 | 2 | 3 | 4 | 5 | 6 |
+-------------------------------
+0| . | . | . | . | . | . | . |
+1| . | . | . | . | . | . | . |
+2| . | . | . | . | . | . | . |
+3| . | . | . | . | O | X | . |
+4| . | . | . | . | X | O | . |
+5| . | . | . | X | O | X | . |
+</code></pre>
+<div class="page-break"></div>
+
+<h3 id="fonction-gameisover">Fonction <code>gameIsOver</code></h3>
+<ul>
+<li>La fonction <code>gameIsOver</code> doit vérifier si un joueur a gagné ou si la grille est pleine.</li>
+<li>Vous pouvez utiliser des boucles <code>for</code> pour vérifier les lignes, colonnes et diagonales de la grille, et vérifier si
+quatre jetons de la même couleur sont alignés.</li>
+<li><strong>Exemple :</strong></li>
+</ul>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(game *Game)</span></span> checkWinner() Player {
+  <span class="hljs-keyword">for</span> i := <span class="hljs-keyword">range</span> <span class="hljs-number">6</span> {
+    <span class="hljs-keyword">for</span> j := <span class="hljs-keyword">range</span> <span class="hljs-number">7</span> {
+      <span class="hljs-comment">// Check row</span>
+      <span class="hljs-comment">// Check that we are not too close to the right edge (to avoid out of range error)</span>
+      <span class="hljs-comment">// Check if the current cell is equal to the next three cells</span>
+      <span class="hljs-keyword">if</span> j &lt;= *BoardWidth<span class="hljs-number">-4</span> &amp;&amp; isEqual(game.Board[i][j], game.Board[i][j+<span class="hljs-number">1</span>], game.Board[i][j+<span class="hljs-number">2</span>], game.Board[i][j+<span class="hljs-number">3</span>]) {
+        <span class="hljs-comment">// ...</span>
+      }
+      <span class="hljs-comment">// ...</span>
+    }
+  }
+  <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<ul>
+<li>Vous pouvez utiliser des variables booléennes pour vérifier si un joueur a gagné dans une ligne, une colonne ou une
+diagonale.</li>
+</ul>
+<h3 id="fonction-switchplayer">Fonction <code>switchPlayer</code></h3>
+<ul>
+<li>La fonction <code>switchPlayer</code> doit retourner l'autre joueur.</li>
+<li>Vous pouvez utiliser une instruction <code>if</code> ou une expression conditionnelle pour retourner le joueur opposé.</li>
+<li>Par exemple, si le joueur actuel est <code>Player1</code>, vous devez retourner <code>Player2</code>, et vice versa.</li>
+</ul>
+<div class="page-break"></div>
+
+<h2 id="partie-2--lecture-et-écriture-de-fichier-3-points">Partie 2 : Lecture et Écriture de Fichier (3 Points)</h2>
+<p><strong>Objectif</strong> :</p>
+<p>Sauvegarder l'état actuel du jeu dans un fichier et charger une partie existante.</p>
+<p><strong>Indications et Squelette de Code</strong> :</p>
+<ul>
+<li>Utilisez <code>os</code> pour gérer les opérations de fichier.</li>
+<li>Structurez les données de manière lisible et facile à charger.</li>
+<li>Intégrer ces méthodes dans le jeu pour permettre aux joueurs de sauvegarder et de charger une partie.</li>
+</ul>
+<blockquote>
+<p>Astuce : Vous pouvez utiliser le format JSON pour sauvegarder et charger l'état du jeu.</p>
+</blockquote>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">saveGame</span><span class="hljs-params">(b Board)</span></span> {
+    <span class="hljs-comment">// Écrivez la logique pour sauvegarder l'état du jeu dans un fichier</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">loadGame</span><span class="hljs-params">()</span></span> Board {
+    <span class="hljs-comment">// Écrivez la logique pour charger l'état du jeu depuis un fichier</span>
+    <span class="hljs-keyword">return</span> Board{}
+}
+</code></pre>
+<h3 id="fonction-savegame">Fonction <code>saveGame</code></h3>
+<ul>
+<li>La fonction <code>saveGame</code> doit écrire l'état actuel de la grille dans un fichier.</li>
+<li>À vous de choisir le format de fichier le plus adapté pour sauvegarder l'état du jeu (Tip : On a vu les formats JSON
+en cours !).</li>
+<li>Pensez à vous souvenir aussi du joueur actuel pour pouvoir reprendre la partie plus tard.</li>
+</ul>
+<h3 id="fonction-loadgame">Fonction <code>loadGame</code></h3>
+<ul>
+<li>La fonction <code>loadGame</code> doit charger l'état du jeu depuis un fichier.</li>
+<li>Vous devez lire le fichier et reconstruire la grille de jeu à partir des données sauvegardées.</li>
+<li>Vous devez aussi retenir le joueur actuel pour reprendre la partie là où elle s'était arrêtée.</li>
+</ul>
+<h2 id="partie-3--interface-utilisateur-2-points">Partie 3 : Interface Utilisateur (2 Points)</h2>
+<p><strong>Objectif</strong> :</p>
+<p>Améliorez l'affichage du plateau et assurez-vous que les instructions pour l'utilisateur sont claires.</p>
+<p>(Psss... Vous pouvez utiliser des couleurs pour rendre le jeu plus attrayant !)</p>
+<h2 id="partie-4--qualité-du-code-et-commentaires-5-points">Partie 4 : Qualité du Code et Commentaires (5 Points)</h2>
+<p><strong>Objectif</strong> :</p>
+<p>Assurez-vous que le code est bien structuré, avec des noms de variables et de fonctions significatifs, et bien commenté.</p>
+<p>PS : Trop de commentaires tuent le commentaire, ils doivent être utiles et pertinents. Trop de commentaires peut être un
+signe de mauvaise qualité de code, car cela peut signifier que le code n'est pas assez clair.</p>
+<div class="page-break"></div>
+
+<h2 id="partie-5--fonctionnalités-bonus-2-points">Partie 5 : Fonctionnalités Bonus (2 Points)</h2>
+<p><strong>Objectif</strong> :</p>
+<p>Ajoutez des fonctionnalités supplémentaires pour gagner des points bonus.</p>
+<p><strong>Exemples</strong> :</p>
+<ul>
+<li>Option pour rejouer une nouvelle partie sans redémarrer le programme.</li>
+<li>Implémenter un compteur de score ou d'autres variantes de jeu.</li>
+<li>Taille du plateau de jeu personnalisable.</li>
+<li>...</li>
+</ul>
+<h2 id="critères-dévaluation">Critères d'Évaluation</h2>
+<ul>
+<li>Fonctionnalité et logique du jeu : <strong>9 points</strong></li>
+<li>Lecture/écriture de fichier : <strong>3 points</strong></li>
+<li>Interface utilisateur : <strong>3 points</strong></li>
+<li>Qualité du code et commentaires : <strong>5 points</strong></li>
+<li>Fonctionnalités bonus : jusqu'à <strong>2 points</strong></li>
+<li><strong>Total</strong> : <strong>20 points</strong> (+ <strong>2 points</strong> bonus)</li>
+</ul>
+
+	
+
+</body></html>
