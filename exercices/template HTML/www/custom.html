@@ -1,0 +1,9 @@
+<h1>{{ .Title}}</h1>
+
+<ul>
+    {{range .Pokemons}}
+    <li>
+        {{.Id}} - {{.Name}}
+    </li>
+    {{end}}
+</ul>
